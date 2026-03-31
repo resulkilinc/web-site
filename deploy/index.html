@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr" class="dark h-full">
+<html lang="tr" class="dark">
 <head>
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="manifest" href="/manifest.json" />
   <meta charset="utf-8" />
   <script>
     (function () {
@@ -20,7 +23,6 @@
   <meta name="description" content="Resul Kılınç — bilgisayar mühendisliği öğrencisi; yazılım, yapay zekâ ve portföy." />
   <meta name="theme-color" content="#09090b" />
   <title>Resul Kılınç | Portföy</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://resulkilinc.com/" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -118,7 +120,7 @@
   </style>
 </head>
 <body
-  class="h-dvh max-h-dvh overflow-hidden bg-zinc-950 text-zinc-100 antialiased flex flex-col selection:bg-rose-900/50"
+  class="min-h-screen bg-zinc-950 text-zinc-100 antialiased flex flex-col selection:bg-rose-900/50"
 >
   <a
     class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[200] focus:rounded-lg focus:bg-rose-950 focus:px-3 focus:py-2 focus:text-sm focus:outline-none focus:ring-2 focus:ring-rose-400"
@@ -140,7 +142,7 @@
   </svg>
 
   <main
-    class="flex-1 min-h-0 w-full max-w-[1280px] mx-auto px-3 pt-3 pb-2 sm:px-4 sm:pt-4 grid grid-cols-12 gap-2.5 sm:gap-3 grid-rows-[auto_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] sm:grid-rows-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1fr)]"
+    class="w-full max-w-[1280px] mx-auto px-3 pt-3 pb-2 sm:px-4 sm:pt-4 grid grid-cols-12 gap-2.5 sm:gap-3"
   >
     <!-- Hero -->
     <header
@@ -204,13 +206,19 @@
       <span class="mt-0.5 text-[10px] text-rose-200/70">Mevcut tam site düzeni →</span>
     </a>
 
+    <!-- Portfolio hint notice -->
+    <p class="col-span-12 flex items-center gap-2 rounded-xl border border-rose-900/25 bg-zinc-900/50 px-3.5 py-2.5 text-[11px] sm:text-xs text-zinc-400 leading-relaxed">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 flex-shrink-0 text-rose-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 16v-4m0-4h.01"/></svg>
+      <span>Bu sayfa hızlı bir genel bakış sunar. Deneyimler, projeler ve teknik derinlik hakkında kapsamlı bilgi için <a href="portfolio.html" class="text-rose-300/90 font-semibold hover:text-rose-200 underline underline-offset-2 transition">tam portföy sayfasını</a> incelemeniz önerilir.</span>
+    </p>
+
     <!-- Bento: row 1 right -->
     <button
       type="button"
       data-modal-open="modal-exp"
       class="col-span-6 sm:col-span-3 lg:col-span-2 group flex min-h-[5.1rem] flex-col justify-center overflow-hidden rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
     >
-      <span class="text-[10px] font-bold uppercase tracking-widest text-rose-400/80">Özet</span>
+      <span class="text-[10px] font-bold uppercase tracking-widest text-rose-400/80">Kariyer</span>
       <span class="mt-1 block font-display text-sm sm:text-base font-semibold text-white group-hover:text-rose-100"
         >Deneyimlerim</span
       >
@@ -876,22 +884,11 @@
     <div class="rek-ai-float__tooltip" role="tooltip" hidden>Size nasıl yardımcı olabilirim?</div>
     <button type="button" class="rek-ai-float__btn" data-open-res-ai aria-label="ReK AI asistanını aç" title="ReK AI">
       <span class="rek-ai-float__glow" aria-hidden="true"></span>
-      <svg class="rek-ai-float__icon" viewBox="0 0 24 24" aria-hidden="true">
-        <defs>
-          <linearGradient id="rekAiFloatIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="currentColor" />
-            <stop offset="100%" stop-color="currentColor" stop-opacity="0.75" />
-          </linearGradient>
-        </defs>
-        <path
-          fill="url(#rekAiFloatIconGrad)"
-          d="M12 2.2 13.4 7.1h5.2l-4.2 3 1.6 5.1L12 14.8 8 15.2l1.6-5.1-4.2-3h5.2L12 2.2z"
-        />
-        <path
-          fill="currentColor"
-          opacity="0.82"
-          d="M18.6 7.9l.35 1.2 1.2.2-.9.75.32 1.15-1.07-.58-1.07.58.32-1.15-.9-.75 1.2-.2.35-1.2z"
-        />
+      <svg class="rek-ai-float__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h3a2 2 0 0 1 2 2v2h1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h1V9a2 2 0 0 1 2-2h3V5.73A2 2 0 0 1 12 2z" fill="currentColor" fill-opacity="0.1" />
+        <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h3a2 2 0 0 1 2 2v2h1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h1V9a2 2 0 0 1 2-2h3V5.73A2 2 0 0 1 12 2z" />
+        <circle cx="12" cy="14" r="2.5" fill="currentColor" />
+        <path d="M9 10h.01M15 10h.01" stroke-width="2.5" />
       </svg>
     </button>
   </div>
@@ -989,7 +986,7 @@
   </script>
   <script src="js/contact-config.js"></script>
   <script src="js/contact-modal.js"></script>
-  <script src="js/rek-ai-float-launcher.js?v=20260328a" defer></script>
-  <script type="module" src="js/res-ai/app.js?v=20260329l"></script>
+  <script src="js/rek-ai-float-launcher.js?v=20260329m" defer></script>
+  <script type="module" src="js/res-ai/app.js?v=20260330f"></script>
 </body>
 </html>

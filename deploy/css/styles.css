@@ -1802,18 +1802,18 @@ body.modal-open {
   width: 3.35rem;
   height: 3.35rem;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--border-subtle));
-  background: color-mix(in srgb, var(--bg-glass) 72%, rgba(20, 12, 24, 0.55));
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  background: color-mix(in srgb, var(--bg-glass) 70%, rgba(8, 47, 73, 0.6));
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  color: var(--wine-bright, #fbcfe8);
+  color: #22d3ee;
   cursor: pointer;
   display: grid;
   place-items: center;
   box-shadow:
     0 8px 28px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
-    0 0 28px color-mix(in srgb, var(--accent) 35%, transparent);
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 0 28px rgba(34, 211, 238, 0.25);
   transition:
     transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.28s ease,
@@ -1823,11 +1823,11 @@ body.modal-open {
 
 .rek-ai-float__btn:hover {
   transform: scale(1.07) translateY(-2px);
-  border-color: color-mix(in srgb, var(--accent) 65%, transparent);
+  border-color: rgba(34, 211, 238, 0.65);
   box-shadow:
     0 14px 36px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-    0 0 40px color-mix(in srgb, var(--accent) 48%, transparent);
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 0 40px rgba(34, 211, 238, 0.45);
 }
 
 .rek-ai-float__btn:active {
@@ -1835,7 +1835,7 @@ body.modal-open {
 }
 
 .rek-ai-float__btn:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid #22d3ee;
   outline-offset: 3px;
 }
 
@@ -1843,7 +1843,7 @@ body.modal-open {
   position: absolute;
   inset: -6px;
   border-radius: inherit;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 45%, transparent) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.45) 0%, transparent 68%);
   opacity: 0.55;
   z-index: 0;
   animation: rekAiFloatGlow 3.2s ease-in-out infinite;
@@ -1855,7 +1855,19 @@ body.modal-open {
   z-index: 1;
   width: 1.45rem;
   height: 1.45rem;
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 55%, transparent));
+  filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.6));
+}
+
+.rek-ai-float__deer-img {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  object-fit: cover;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 75%, transparent));
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
 
 @keyframes rekAiFloatGlow {
@@ -1893,20 +1905,20 @@ body.modal-open {
 }
 
 [data-theme="light"] .rek-ai-float__btn {
-  color: #9d174d;
-  background: color-mix(in srgb, #fff 55%, rgba(250, 232, 240, 0.92));
-  border-color: color-mix(in srgb, #db2777 35%, #e7e5e4);
+  color: #0369a1;
+  background: color-mix(in srgb, #fff 55%, rgba(224, 242, 254, 0.92));
+  border-color: color-mix(in srgb, #0ea5e9 35%, #e7e5e4);
   box-shadow:
-    0 8px 24px rgba(42, 22, 30, 0.12),
+    0 8px 24px rgba(12, 74, 110, 0.12),
     0 0 0 1px rgba(255, 255, 255, 0.9) inset,
-    0 0 20px rgba(219, 39, 119, 0.15);
+    0 0 20px rgba(14, 165, 233, 0.25);
 }
 
 [data-theme="light"] .rek-ai-float__btn:hover {
   box-shadow:
-    0 12px 32px rgba(42, 22, 30, 0.16),
+    0 12px 32px rgba(12, 74, 110, 0.16),
     0 0 0 1px #fff inset,
-    0 0 28px rgba(219, 39, 119, 0.22);
+    0 0 28px rgba(14, 165, 233, 0.35);
 }
 
 /* Stack above floating AI when both are visible (portfolio) */
@@ -2899,16 +2911,20 @@ dialog.modal--res-ai::backdrop {
    -------------------------------------------------------------------------- */
 .top-dock {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 65;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.4rem;
-  max-width: calc(100vw - 2rem);
+  gap: 0.6rem;
+  padding: 0.4rem;
+  background: rgba(20, 8, 12, 0.45);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
 }
 
 @media (max-width: 1023px) {
@@ -2920,27 +2936,27 @@ dialog.modal--res-ai::backdrop {
 .top-dock__chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.32rem 0.65rem;
-  min-height: 2.15rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-elevated);
-  backdrop-filter: blur(14px);
-  box-shadow: var(--shadow-glass);
-  cursor: pointer;
-  text-align: left;
-  color: inherit;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(220, 160, 175, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.28s cubic-bezier(0.2, 0, 0.2, 1);
+  box-shadow: none;
+  cursor: pointer;
 }
 
 .top-dock__chip:hover {
-  transform: translateY(-1px);
-  border-color: rgba(220, 160, 175, 0.28);
-  box-shadow: 0 10px 28px rgba(8, 2, 6, 0.32);
+  transform: translateY(-2px);
+  background: rgba(220, 160, 175, 0.12);
+  border-color: rgba(220, 160, 175, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 12px rgba(220, 160, 175, 0.15);
+  color: #fff;
 }
 
 a.top-dock__chip {
@@ -2957,20 +2973,20 @@ a.top-dock__chip {
 
 .top-dock__theme-block {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.5rem;
 }
 
 .top-dock__theme-caption {
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
   line-height: 1;
-  max-width: 4.5rem;
-  text-align: center;
+  pointer-events: none;
+  opacity: 0.8;
 }
 
 .top-dock__chip--theme {
@@ -3456,6 +3472,12 @@ dialog.modal--res-ai .modal__header {
   max-height: inherit;
 }
 
+@media (max-width: 900px) {
+  .rek-platform {
+    min-height: 85vh;
+  }
+}
+
 .rek-platform__header {
   padding: 0.85rem 1rem 0.5rem;
   border-bottom: 1px solid var(--border-subtle);
@@ -3605,6 +3627,23 @@ dialog.modal--res-ai .modal__header {
   font-size: 1.15rem;
   border-radius: 999px;
   flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .rek-platform__header {
+    padding: 0.6rem 0.75rem 0.4rem;
+  }
+  .rek-platform__logo {
+    width: 36px;
+    height: 36px;
+  }
+  .rek-platform__robot-svg {
+    width: 32px;
+    height: 32px;
+  }
+  .rek-platform__title {
+    font-size: 0.9rem;
+  }
 }
 
 .rek-platform__header-end {
@@ -4424,39 +4463,83 @@ dialog.modal--res-ai .modal__header {
 
 @media (max-width: 900px) {
   .rek-platform__workspace {
-    grid-template-columns: 1fr;
-    grid-template-areas: "stage" "sidebar";
-  }
-
-  .rek-platform--controls-open .rek-platform__workspace {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    position: relative;
+    overflow: hidden;
   }
 
   .rek-platform__stage {
-    min-height: min(48vh, 440px);
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Sohbet alanını ferahlat: paddingleri düşür */
+  .rek-platform__panel[data-res-ai-tab-panel="chat"] {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .rek-platform__sidebar {
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    background: linear-gradient(165deg, rgba(20, 8, 14, 0.98), rgba(60, 20, 42, 0.96));
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 1.5rem 1rem !important;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), opacity 0.3s ease;
+    display: flex !important; /* Görünürlük transform ile yönetiliyor */
+    opacity: 0;
+    pointer-events: none;
+    border: none;
+    border-top: 1px solid rgba(220, 160, 175, 0.35);
+    border-radius: 20px 20px 0 0;
+  }
+
+  .rek-platform--controls-open .rek-platform__sidebar {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Temel kontroller butonu - mobilde daha belirgin ve "ayar" benzeri */
+  .rek-controls-toggle {
+    background: rgba(220, 160, 175, 0.15);
+    border-color: rgba(220, 160, 175, 0.3);
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .rek-platform--controls-open .rek-controls-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 60;
+    background: rgba(236, 72, 153, 0.4);
+    border-color: #f472b6;
   }
 
   .rek-platform__tabs {
-    width: 100%;
-    justify-content: flex-start;
+    gap: 0.25rem;
   }
 
-  .rek-platform__header-end {
-    width: 100%;
-    justify-content: flex-end;
-    margin-top: 0.35rem;
+  .rek-platform__tab {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.68rem;
   }
 
   .rek-chat-rail {
-    display: none;
-  }
-
-  .modal--res-ai .rek-chat-rail {
-    display: block;
+    display: none !important;
   }
 
   .rek-chat-thread {
-    flex: 1 1 auto;
+    gap: 0.4rem;
   }
 }
 
@@ -5198,4 +5281,57 @@ body.rk-panel-section[data-rk-section="interests"] .main-content > section:not(#
 
 body.rk-panel-section[data-rk-section="contact"] .main-content > section:not(#contact) {
   display: none !important;
+}
+
+/* --- ReK AI Interactive Suggestion Chips (Added by Antigravity) --- */
+.rek-ai-suggestions {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  animation: rekFadeIn 0.5s ease-out forwards;
+}
+
+.rek-ai-suggestions__label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, rgba(255, 255, 255, 0.5));
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.rek-ai-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.rek-ai-chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color, #fff);
+  padding: 0.5rem 0.875rem;
+  border-radius: 2rem;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+}
+
+.rek-ai-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rek-ai-chip:active {
+  transform: translateY(0);
+}
+
+@keyframes rekFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
