@@ -1,27 +1,39 @@
-# Personal & Sensitive Data
-vcc4/
-assets/cv/
-*.pdf
-!assets/makale-zeytin.pdf
+# Senior-Level Exclusion Policy
 
-# Redundant / Deployment
-deploy/
-_routes.json
+# MacOS System Files
+.DS_Store
+
+# IDE & Tool Configs
+.cursor/
+.vscode/
+.idea/
 .wrangler/
-sync-deploy.sh
-GERI-DONUS.txt
+_routes.json
+node_modules/
 
-# Backup & Temporary
-*-ONCEKI-YEDEK.html
-test-*.mjs
-
-# AI Sources (Moved to rek-ai-engine)
+# Redundant / Mirror Folders
+deploy/
 rek-sources/
 
-# Environment / Tooling
-.cursor/
-.DS_Store
-node_modules/
-npm-debug.log
-.env
-.env.*
+# Backups & Logs
+*-YEDEK.*
+*-ONCEKI-YEDEK.html
+*-YEDEK.html
+*-YEDEK.js
+*-YEDEK.css
+GERI-DONUS.txt
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Private / Personal Documents
+vcc4/
+assets/cv/
+cv.pdf
+resulkilinc_cv.pdf
+
+# Test / Internal Scripts
+test-*.mjs
+sync-deploy.sh
+build-rek-knowledge.mjs
+tools/

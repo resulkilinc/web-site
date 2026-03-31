@@ -204,13 +204,15 @@
             >
             Gmail ile yaz
           </a>
+<!-- CV button commented out for privacy
           <button
             type="button"
-            data-open-contact-modal="true"
+            data-modal-open="modal-cv"
             class="inline-flex items-center rounded-xl border border-zinc-600 bg-zinc-900/80 px-3 py-2 text-xs font-semibold text-zinc-200 hover:border-rose-500/40 hover:text-white transition"
           >
-            CV (Request via Mail)
+            CV (PDF)
           </button>
+-->
         </div>
       </div>
     </header>
@@ -617,11 +619,33 @@
     </div>
   </dialog>
 
-  <!-- CV Modal sanitized - contact via mail for professional requests -->
-  <!--
-  <dialog id="modal-cv" ...>
+<!-- CV modal commented out for privacy
+  <dialog id="modal-cv" class="pro-modal rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-md w-[min(100%,22rem)] shadow-2xl" aria-labelledby="modal-cv-title">
+    <div class="flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95">
+      <h2 id="modal-cv-title" class="font-display text-lg font-semibold text-white">CV indir</h2>
+      <form method="dialog">
+        <button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button>
+      </form>
+    </div>
+    <div class="px-4 py-4 space-y-3">
+      <p class="text-sm text-zinc-400">İndirmeden önce dil seçin.</p>
+      <div class="flex flex-col gap-2">
+        <a
+          href="assets/cv/cv-tr.pdf"
+          download="Resul_Kilinc_CV_TR.pdf"
+          class="inline-flex justify-center rounded-xl bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-rose-500 transition"
+          >Türkçe PDF</a
+        >
+        <a
+          href="assets/cv/cv-en.pdf"
+          download="Resul_Kilinc_CV_EN.pdf"
+          class="inline-flex justify-center rounded-xl border border-zinc-600 bg-zinc-800/80 px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-rose-500/40 transition"
+          >English PDF</a
+        >
+      </div>
+    </div>
   </dialog>
-  -->
+-->
 
   <dialog class="modal modal--gmail" id="contact-modal" aria-labelledby="contact-modal-title">
     <div class="gmail-compose">

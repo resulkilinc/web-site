@@ -1,36 +1,28 @@
-# Resul Kılınç — Professional Portfolio & Digital Twin
+# Resul Kılınç — Applied Machine Learning & Software Engineering Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-rose.svg)](https://resulkilinc.com)
-[![License: All Rights Reserved](https://img.shields.io/badge/License-All_Rights_Reserved-lightgrey.svg)](#license)
-
-Personal portfolio and professional showcase for **Resul Kılınç**, a Computer Engineering student specialized in Applied Machine Learning and Scalable Software Architectures.
+Welcome to my professional software engineering portfolio. This repository showcases my technical skills, academic research, and engineering logic through a high-performance, mobile-first static application.
 
 ## 🚀 Key Features
 
-- **ReK AI (Digital Twin)**: A secure, local-first RAG (Retrieval-Augmented Generation) engine that answers professional queries directly in the browser.
-- **Modern Tech Stack**: Built with high-performance Vanilla JS, CSS, and Tailwind for maximum speed and accessibility.
-- **PWA & SEO Optimized**: Fully installable as a mobile app and indexed for high search visibility.
-- **Academic Integration**: Showcases research outputs, including an automated Olive Quality Classification system.
+- **ReK AI Assistant**: A local-first, privacy-focused digital twin engine built with Retrieval-Augmented Logic (RAG).
+- **Responsive Bento UI**: A modern, glassmorphism-inspired interface optimized for all devices.
+- **PWA Ready**: Offline-capable web application with clean storage and caching strategies.
+- **Academic Integration**: Direct access to my machine learning research papers and technical insights.
 
-## 📁 Project Structure
+## 🛠️ Technology Stack
 
-- `index.html`: High-level landing page and quick overview.
-- `portfolio.html`: Comprehensive professional documentation and project vitrine.
-- `js/res-ai/`: Core logic for the ReK AI engine.
-- `css/`: Custom design system and styling tokens.
-- `assets/`: Optimized images, professional icons, and academic publications.
+- **Frontend**: Vanilla JavaScript (ES6+), Tailwind CSS, Semantic HTML5.
+- **AI Core**: Custom-built RAG engine (ReK AI) for context-aware responses.
+- **Tools**: Cloudflare Pages / Wrangler and custom build scripts for knowledge generation.
 
-## 🛠 Tech Stack
+## 📂 Project Structure
 
-- **Foundational**: Semantic HTML5, CSS3 Custom Properties.
-- **UI/Layout**: Tailwind CSS, Mobile-First Design.
-- **Intelligence**: Custom JavaScript RAG Engine (ReK AI).
-- **Deployment**: Static cloud hosting (Cloudflare Pages).
+- `index.html` / `portfolio.html`: Core application entry points.
+- `css/`: Modern design system and custom styling.
+- `js/res-ai/`: The brain of the application (AI Engine & Knowledge).
+- `assets/`: Media and academic documents.
 
-## 📄 License
+## 📜 License
 
-**© 2026 Resul Kılınç.** All rights reserved. 
-The source code for the portfolio design and personal content is proprietary. For open-source components, see the [rek-ai-engine](https://github.com/resulkilinc/rek-ai-engine) repository.
-
----
-*Generated with professionalism by Antigravity.*
+© 2026 Resul Kılınç. All Rights Reserved.
+Commercial use or redistribution without explicit permission is prohibited.
