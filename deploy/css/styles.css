@@ -2908,19 +2908,26 @@ dialog.modal--res-ai::backdrop {
 .top-dock {
   position: fixed;
   top: 1.25rem;
-  right: 1.25rem;
-  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.6rem;
-  padding: 0.4rem;
-  background: rgba(20, 8, 12, 0.45);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.8rem;
+  background: rgba(18, 10, 14, 0.72);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(220, 38, 127, 0.1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  width: auto;
+  max-width: fit-content;
 }
 
 @media (max-width: 1023px) {
@@ -2932,26 +2939,29 @@ dialog.modal--res-ai::backdrop {
 .top-dock__chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1rem;
+  gap: 0.6rem;
+  padding: 0.55rem 1.1rem;
   border-radius: 999px;
-  border: 1px solid rgba(220, 160, 175, 0.15);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f4f4f5;
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.28s cubic-bezier(0.2, 0, 0.2, 1);
-  box-shadow: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .top-dock__chip:hover {
-  transform: translateY(-2px);
-  background: rgba(220, 160, 175, 0.12);
-  border-color: rgba(220, 160, 175, 0.45);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 12px rgba(220, 160, 175, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(220, 38, 127, 0.4);
+  box-shadow: 
+    0 10px 24px rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(220, 38, 127, 0.15);
   color: #fff;
 }
 
@@ -2971,18 +2981,19 @@ a.top-dock__chip {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  padding-right: 0.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .top-dock__theme-caption {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1;
   pointer-events: none;
-  opacity: 0.8;
 }
 
 /* İletişim modalı — portföy teması, açılış animasyonu */
