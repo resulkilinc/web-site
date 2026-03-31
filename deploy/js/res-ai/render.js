@@ -221,12 +221,22 @@ export function renderAssistantResult(result) {
 
   var cleanSummary = stripLegacyAssistantMarkdown(result.summary || "");
 
+  var suggestionsHtml = "";
+  if (result.suggestions && result.suggestions.length > 0) {
+    var suggestionLabel = isEn ? "Suggested Topics:" : "Önerilen Konular:";
+    var chips = result.suggestions.map(function(s) {
+      return '<button class="rek-ai-chip" data-suggestion-query="' + escapeHtml(s) + '" type="button">' + escapeHtml(s) + '</button>';
+    }).join("");
+    suggestionsHtml = '<div class="rek-ai-suggestions"><span class="rek-ai-suggestions__label">' + suggestionLabel + '</span><div class="rek-ai-chips">' + chips + '</div></div>';
+  }
+
   return (
     '<div class="rek-ai-answer">' +
     guardNotice +
     '<div class="rek-ai-summary">' +
     markdownToHtml(cleanSummary) +
     "</div>" +
+    suggestionsHtml +
     "</div>"
   );
 }

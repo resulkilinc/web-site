@@ -1,82 +1,46 @@
 /**
- * Çekirdek parçacıklar: genel giriş, öğrenme yolları, ReK AI nasıl çalışır.
+ * ReK AI Çekirdek Felsefesi ve Resul Kılınç'ın Teknik Vizyonu.
+ * Bu bölüm sistemin temel kimliğini ve Resul'un mühendislik duruşunu tanımlar.
  * @type {{ id: string, title: string, text: string, tags: string[] }[]}
  */
 export const CORE_SNIPPETS = [
   {
-    id: "default-giris",
-    title: "Yazılıma genel bakış",
+    id: "rek-ai-mission",
+    title: "ReK AI: Resul'un Dijital Temsili ve Misyonu",
     text:
-      "Yazılım kariyerinde ilerlerken bir ‘alan’ seçmek (ör. web, mobil, veri, altyapı) ve o alanda temel kavramları pekiştirmek gerekir. " +
-      "İlk aşamada bir programlama dili, sürüm kontrol (Git) ve basit projeler üzerinde pratik şart. " +
-      "Üniversite veya öğrenim müfredadınız hangi alan olursa olsun, açık kaynak projelere katkı ve portföy (GitHub) görünür kılmayı unutmayın. " +
-      "Öğrenme sırasını kendi hedefinize göre çıkarıp düzenli geri dönüşlerle güncellemeniz verimlidir.",
-    tags: [
-      "yazılım",
-      "software",
-      "kariyer",
-      "career",
-      "başlangıç",
-      "baslangic",
-      "sıfır",
-      "sifir",
-      "nasıl",
-      "ne",
-      "yardım",
-      "genel",
-      "roadmap",
-      "yol",
-      "harita",
-    ],
+      "Ben ReK AI, Resul Kılınç'ın profesyonel dijital temsilcisiyim. " +
+      "Görevim; Resul'un teknik yetkinliklerini, dökümante edilmiş mühendislik başarılarını ve vizyonunu size en doğru ve etkili şekilde aktarmaktır. " +
+      "Resul'un projeleri, akademik geçmişi ve çözüm odaklı mühendislik yaklaşımı hakkında gerçek verilere dayalı analizler sunarım. " +
+      "Tüm verilerim, Resul'un kendi dökümantasyonundan ve gerçek dünya tecrübelerinden süzülmüştür.",
+    tags: ["misyon", "mission", "identity", "resul'un sesi", "dijital ikiz", "temsil"],
   },
   {
-    id: "yol-haritasi-genel",
-    title: "Öğrenme yolu ve roller",
+    id: "resul-philosophy",
+    title: "Resul'un Mühendislik Felsefesi: Ölçülebilir Kalite",
     text:
-      "Geliştirici rolleri (ör. ön yüz, arka uç, DevOps, veri, yapay zekâ mühendisliği) farklı beceri kümeleri gerektirir. " +
-      "ReK AI, bu roller için tipik öğrenme sırasını ve kavramları özet metin olarak sunar; görsel şema veya resmi müfredat yerine geçmez. " +
-      "İngilizce dokümantasyon ve teknik okuma alışkanlığı çoğu alanda faydalıdır.",
-    tags: [
-      "roadmap",
-      "harita",
-      "yol",
-      "dashboard",
-      "rehber",
-      "guide",
-      "öğrenme",
-      "ogrenme",
-    ],
+      "Resul, mühendisliği 'sorunları sadece çözmek değil, onları dökümante edilmiş ve ölçeklenebilir birer değer haline getirmek' olarak tanımlar. " +
+      "Yazılım sürecinde 'önce net problem tanımı, sonra veri temelli çözüm' ilkesini benimser. " +
+      "Teknik borç bırakmayan (zero technical debt), erişilebilir (a11y) ve yüksek performanslı ürünler geliştirmek, Resul'un her projesindeki temel motivasyonudur. " +
+      "Onun için başarı; sadece çalışan bir kod değil, sürdürülebilir bir mühendislik mirasıdır.",
+    tags: ["felsefe", "philosophy", "kalite", "quality", "engineering mindset", "standards"],
   },
   {
-    id: "res-ai-aciklama",
-    title: "Profesyonel Dökümantasyon ve Bilgi Erişimi",
+    id: "resul-growth-path",
+    title: "Resul'un Gelişim ve Uzmanlaşma Yolu",
     text:
-      "Bu sistem, Resul Kılınç'ın profesyonel dökümantasyonunu ve teknik uzmanlığını yansıtan yerel bir bilgi erişim mekanizmasıdır. " +
-      "Kullanıcı gizliliğini korumak adına tüm veriler tarayıcı tarafında işlenir; harici bulut servislerine veri gönderilmez. " +
-      "Verilen yanıtlar, Resul'un projeleri, mühendislik disiplini ve kariyer vizyonu hakkında dökümante edilmiş analizleri birleştirerek sunar. " +
-      "Resul'un teknik yetkinliklerini, akademik dökümantasyon standartlarını veya mühendislik tercihlerini anlamak için sorularınızı somutlaştırabilirsiniz.",
-    tags: ["representative", "documentation", "rag", "resul kilinc", "biography", "local access", "privacy", "gizlilik"],
+      "Resul, kariyer yolculuğunu 'teorik derinlik ve pratik çeviklik' üzerine kurgulamıştır. " +
+      "KSÜ'deki akademik temellerini, TEKNOFEST ve Erasmus gibi zorlu saha tecrübeleriyle birleştirmiştir. " +
+      "Hata ayıklama konusundaki titizliği (Google Antigravity tecrübesi) ve veri odaklı yaklaşımı (Zeytin Projesi), onu çok yönlü bir mühendis olarak şekillendirmiştir. " +
+      "Sürekli öğrenmeyi bir metodoloji haline getirerek, her yeni teknolojiyi Resul-centric bir üretim değerine dönüştürür.",
+    tags: ["gelişim", "growth", "career journey", "academic foundation", "practical experience"],
   },
   {
-    id: "ogrenci-bolum",
-    title: "Üniversite / bölüm öğrencileri",
+    id: "resul-collaboration",
+    title: "İş Birliği ve Profesyonel Adaptasyon Kültürü",
     text:
-      "Bilgisayar mühendisliği veya ilgili bölümde teoriyi (algoritma, işletim sistemi, ağ) okurken paralelde küçük projeler üretin. " +
-      "Ders projelerini GitHub’da temiz README ile paylaşmak staj başvurularında fark yaratır. " +
-      "Yaz stajı ve Erasmus gibi hareketlilikler için erken tarihlerde başvuru ve dil (İngilizce teknik okuma) hazırlığı yapın. " +
-      "İlgi alanınızı keşfetmek için iki–üç farklı alanda küçük deneme projeleri yapmak genelde netlik sağlar.",
-    tags: [
-      "üniversite",
-      "universite",
-      "bölüm",
-      "bolum",
-      "öğrenci",
-      "ogrenci",
-      "ksu",
-      "staj",
-      "internship",
-      "mezun",
-      "ders",
-    ],
+      "Resul, takım çalışmasını 'farklı disiplinlerin teknik standartlarda buluşması' olarak görür. " +
+      "Uluslararası tecrübeleri (Polonya/Bulgaristan) sayesinde global çalışma kültürlerine ve teknik dökümantasyon diline yüksek adaptasyon gösterir. " +
+      "Açık iletişim, dökümante edilmiş sorumluluklar ve teknik rasyonalite; Resul'un her projede sunduğu profesyonel iş birliği standartlarıdır.",
+    tags: ["collaboration", "teamwork", "adaptability", "international culture", "professional communication"],
   },
 ];

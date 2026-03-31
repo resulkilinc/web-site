@@ -4,7 +4,7 @@
  * Toplam sistem snippet sayısı 200+'dür.
  */
 export const GENERATED_SNIPPETS = [
-  // ── TEMEL PROFİL VE ÖZETLER ─────────────────
+  // ── TEMEL PROFİL VE ANA SAYFA İÇERİĞİ ─────────────────
   {
     id: "gen-about",
     title: "Resul Kılınç Kimdir? — Teknik Profil ve Mühendislik Vizyonu",

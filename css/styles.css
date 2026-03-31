@@ -258,9 +258,9 @@ body.modal-open {
 
 .mobile-header__theme-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.12rem;
+  gap: 0.35rem;
 }
 
 .top-dock__theme-caption--mobile {
@@ -570,11 +570,7 @@ body.modal-open {
   filter: drop-shadow(0 0 6px rgba(217, 119, 6, 0.35));
 }
 
-.top-dock__chip--theme.theme-toggle--lamp {
-  padding: 0.28rem;
-  min-height: 0;
-  justify-content: center;
-}
+
 
 /* --------------------------------------------------------------------------
    Shell layout: sidebar + main
@@ -2987,80 +2983,6 @@ a.top-dock__chip {
   line-height: 1;
   pointer-events: none;
   opacity: 0.8;
-}
-
-.top-dock__chip--theme {
-  padding: 0.32rem 0.65rem;
-  min-height: 2.15rem;
-  height: auto;
-  justify-content: center;
-  position: relative;
-  box-shadow:
-    0 0 0 1px rgba(220, 160, 175, 0.25),
-    0 0 18px rgba(200, 130, 155, 0.18);
-  animation: themeGlowPulse 3.2s ease-in-out infinite;
-}
-
-@keyframes themeGlowPulse {
-  0%,
-  100% {
-    box-shadow:
-      0 0 0 1px rgba(220, 160, 175, 0.45),
-      0 0 14px rgba(200, 130, 155, 0.28);
-  }
-  50% {
-    box-shadow:
-      0 0 0 2px rgba(232, 190, 200, 0.55),
-      0 0 22px rgba(210, 150, 170, 0.42);
-  }
-}
-
-.top-dock__chip--theme .theme-toggle__icon {
-  width: 1.05rem;
-  height: 1.05rem;
-}
-
-.top-dock__chip-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--accent);
-}
-
-.top-dock__chip-icon svg {
-  width: 17px;
-  height: 17px;
-  display: block;
-}
-
-.top-dock__chip-icon--deer svg {
-  width: 19px;
-  height: 22px;
-}
-
-.top-dock__chip-icon--gmail {
-  width: 1.35rem;
-  height: 1.35rem;
-  min-width: 1.35rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #ea4335, #fbbc04);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.72rem;
-}
-
-.top-dock__chip-label {
-  letter-spacing: 0.02em;
-  color: var(--text-primary);
-}
-
-.top-dock__chip--ai {
-  border-color: rgba(200, 140, 155, 0.22);
-}
-
-.top-dock__chip--mail .top-dock__chip-label {
-  color: var(--text-primary);
 }
 
 /* İletişim modalı — portföy teması, açılış animasyonu */

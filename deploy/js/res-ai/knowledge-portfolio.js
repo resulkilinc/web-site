@@ -7,27 +7,26 @@ export const PORTFOLIO_SNIPPETS = [
   // ── ReK AI ───────────────────────────────────────────────────────────
   {
     id: "rekai-overview",
-    title: "ReK AI Mimarisi ve Bilgi Erişimi",
+    title: "ReK AI: Bilgi Erişimi ve Mimari Karar Disiplini",
     text:
-      "Resul'un yapay zeka ve bilgi mimarisi yaklaşımının bir ürünü olan ReK AI, kullanıcı gizliliğini merkeze alan 'Local RAG' (Retrieval-Augmented Generation) disiplini üzerine kuruludur. " +
-      "Dış sunucu bağımlılığını ve API maliyetlerini sıfıra indiren bu sistem, tarayıcı tarafında çalışan modüler bir pipeline (tokenize -> retrieve -> rank -> compose) kullanır. " +
-      "Resul, sistemin güvenilirliğini sağlamak adına 'Guard Threshold' ve 'Source-First' modlarını entegre ederek, düşük güven skorlu yanıtlarda bile dökümantasyon bütünlüğünü korumayı tercih etmiştir. " +
-      "Gecikme süresi (latency) ve skor şeffaflığı sağlayan Diagnostics arayüzü, Resul'un teknik şeffaflık ve performans izleme disiplinini yansıtır.",
-    tags: ["rek ai", "representative", "portfolio", "architectural choice", "local knowledge", "source-backed", "rag", "retrieval", "local", "privacy", "zero-cost"],
+      "ReK AI, Resul'un veri gizliliğini ve performansı önceliklendiren mühendislik yaklaşımının somut bir örneğidir. " +
+      "Tarayıcı tabanlı 'Local RAG' mimarisini tercih ederek API maliyetlerini ve dış bağımlılıkları sıfıra indirmiştir. " +
+      "Resul, bu projeyi geliştirirken Retrieval-Augmented Generation prensiplerini uçtan uca uygulayarak sistemin şeffaflığını (Diagnostics) ve güvenilirliğini (Source-backing) en üst düzeye çıkarmıştır. " +
+      "Bu süreç Resul'a; kaynak kısıtlı ortamlarda (resource-constrained) mimari trade-off yapma, performans izleme ve veriden değer üretme konusunda üst düzey bir yetkinlik kazandırmıştır.",
+    tags: ["rek ai", "architecture", "local rag", "privacy", "performance", "trade-offs", "engineering mindset", "data retrieval"],
     source: { label: "Portfolio · ReK AI section", url: "portfolio.html#res-ai", kind: "section" },
   },
 
   // ── Zeytin Projesi ───────────────────────────────────────────────────
   {
     id: "zeytin-core",
-    title: "Zeytin Olgunluk Sınıflandırmasında Akademik Yaklaşım",
+    title: "Bilgisayarlı Görü: Zeytin Olgunluk Tespiti ve Veri Yönetimi",
     text:
-      "Resul'un bilgisayarlı görü ve derin öğrenme alanındaki teknik disiplini, Zeytin olgunluk sınıflandırma projesindeki veri odaklı yaklaşımıyla öne çıkar. " +
-      "EfficientNet-B0 mimarisinin transfer learning yöntemleriyle optimize edilmesi ve saha koşullarını yansıtmak adına oluşturulan 2694 görüntülük özgün veri kümesi, " +
-      "Resul'un gerçek dünya problemlerini matematiksel modellerle harmanlama başarısını kanıtlar. " +
-      "Proje, tarımsal üretim hatlarında manuel kalite kontrolün getirdiği hata payını minimize eden, " +
-      "doğruluğu akademik olarak doğrulanmış (%84.95 accuracy) bir mühendislik çözümüdür.",
-    tags: ["zeytin", "olive", "classification", "ripeness", "dataset", "computer vision", "ml", "academic rigor", "field conditions", "2694"],
+      "Resul, 2694 görüntülük özgün bir veri kümesi üzerinde EfficientNet-B0 mimarisini kurgulayarak tarımsal kalite kontrol süreçlerinde %84.95 başarı elde etmiştir. " +
+      "Bu proje kapsamında veri temizleme, etiketleme ve sınıf dengesizliği (imbalance) yönetimi gibi kritik süreçleri uçtan uca dökümante etmiştir. " +
+      "Resul'un bu projedeki başarısı; teorik ML bilgisini saha koşullarına uygulama titizliğini ve metric-based (Precision, Recall, F1) performans analiz yeteneğini kanıtlar. " +
+      "Bu deneyim ona; veri odaklı problem çözme, akademik raporlandırma ve model optimizasyonu konularında derin bir disiplin katmıştır.",
+    tags: ["ml", "cv", "metrics", "data processing", "efficientnet", "academic reporting", "quality control", "olive project"],
     source: { label: "Portfolio · Projeler", url: "portfolio.html#projects", kind: "project" },
   },
   {
@@ -40,7 +39,7 @@ export const PORTFOLIO_SNIPPETS = [
       "Değerlendirme metrikleri: Precision, Recall, F1-Score ve Confusion Matrix. " +
       "Sınıf dengesizliği (class imbalance) için class weighting uygulanmıştır. " +
       "Model, eğitim ve doğrulama kayıplarını epoch bazında izleyerek erken durdurma (early stopping) ile optimize edilmiştir.",
-    tags: ["84.95", "accuracy", "f1", "precision", "recall", "confusion matrix", "ala yeşil", "siyah", "yeşil", "metrik", "test", "doğruluk", "başarı", "sınıf"],
+    tags: ["84.95", "accuracy", "f1", "precision", "recall", "confusion matrix", "ala yeşil", "siyah", "yeşil", "metrik", "test", "doğruluk", "başarı", "sınıflandırma"],
     source: { label: "Makale · Zeytin PDF", url: "assets/makale-zeytin.pdf", kind: "paper" },
   },
   {
@@ -99,28 +98,26 @@ export const PORTFOLIO_SNIPPETS = [
   // ── Mühendislik İş Akışı ─────────────────────────────────────────────
   {
     id: "engineering-workflow",
-    title: "Mühendislik iş akışı ve çalışma disiplini",
+    title: "Mühendislik İş Akışı: Teslimat ve Kalite Standartları",
     text:
-      "İş akışı 5 aşamadan oluşur: (1) Keşif — problem ve hedef tanımı; (2) Tasarım — mimari ve görev kırılımı; " +
-      "(3) Uygulama — kod standartları, code review ve commit disiplini; " +
-      "(4) Kalite — test, erişilebilirlik (a11y) ve performans kontrolü; (5) Yayın — CI/CD mantığıyla kontrollü deploy ve izleme. " +
-      "Bu süreç hem bireysel projelerde (portföy, ReK AI) hem de takım çalışmalarında (TEKNOFEST) uygulanmıştır.",
-    tags: ["workflow", "code review", "quality", "release", "a11y", "performance", "testing", "iş akışı", "ci/cd", "deploy"],
+      "Resul'un iş akışı; 'önce net problem tanımı, sonra ölçülebilir çözüm' prensibi üzerine kurulu 5 aşamalı bir disiplindir. " +
+      "(1) Keşif, (2) Tasarım, (3) Uygulama, (4) Kalite (a11y/performans) ve (5) Kontrollü Yayın (CI/CD). " +
+      "Resul, bu standartları her projesinde (örn: ReK AI, TEKNOFEST) uygulayarak teknik borçsuz ve dökümantasyonu tam ürünler teslim eder. " +
+      "Bu disiplin ona; zaman baskısı altında kaliteyi koruma, ekip içinde net sorumluluk paylaşımı ve sürdürülebilir yazılım geliştirme yetkinliği katmıştır.",
+    tags: ["workflow", "delivery", "quality assurance", "ci/cd", "standardization", "documentation discipline", "engineering process"],
     source: { label: "Portfolio · İş akışı", url: "portfolio.html#workflow", kind: "section" },
   },
 
   // ── Yetenek Profili ───────────────────────────────────────────────────
   {
     id: "skills-focus",
-    title: "Yetenek profili — teknik stack",
+    title: "Profesyonel Yetenek Matrisi ve Değer Önerisi",
     text:
-      "Frontend: React, Next.js (SSR/SSG/ISR), JavaScript/TypeScript (Zustand, Context API, ESM), HTML/CSS. " +
-      "ML ve veri: Python, TensorFlow, PyTorch, SQL — veri hazırlama, model eğitimi, metrik analizi. " +
-      "Mobil: Kotlin (Android, lifecycle farkındalığı, katmanlı mimari). " +
-      "Sistem: Java, C++ (algoritmik doğruluk ve düşük seviye performans). " +
-      "Araçlar: Git (branch disiplini, commit izlenebilirliği, code review odaklı teslimat). " +
-      "Dil: İngilizce B2 (teknik dokümantasyon, sözlü iletişim, akademik yazım).",
-    tags: ["javascript", "python", "sql", "kotlin", "git", "frontend", "backend", "ml", "tensorflow", "pytorch", "java", "c++", "yetenek", "skill", "stack"],
+      "Resul'un yetenekleri; React/Next.js (Frontend), SQL (Data), Kotlin (Mobile) ve ML (EfficientNet) alanlarında derinleşmiş bir mühendislik vizyonudur. " +
+      "O, bir aracı sadece kullanmak değil; o aracın performans limitlerini (örn: Local RAG gecikme optimizasyonu) ve mimari kısıtlarını anlamayı önceler. " +
+      "Teknik yetkinliğini B2 seviye İngilizce ve akademik yazım titizliğiyle birleştiren Resul, uluslararası stajlar ve takımlar için yüksek adaptasyon sunar. " +
+      "Bu donanım ona; karmaşık sistemleri analiz etme, hızlı prototipleme ve global standartlarda teknik iletişim kurma yeteneği kazandırmıştır.",
+    tags: ["skills", "expertise", "react", "nextjs", "ml", "sql", "kotlin", "international adaptability", "technical communication", "value proposition"],
     source: { label: "Portfolio · Yetenekler", url: "portfolio.html#skills", kind: "section" },
   },
 
@@ -129,31 +126,34 @@ export const PORTFOLIO_SNIPPETS = [
     id: "experience-focus",
     title: "Uluslararası Hareketlilik ve Profesyonel Adaptasyon",
     text:
-      "Resul'un profesyonel gelişimi, uluslararası akademik standartlara uyum ve teknik adaptasyon disipliniyle karakterize edilir. " +
+      "Resul'un profesyonel gelişimi; uluslararası akademik standartlara uyum ve global mühendislik ekosistemine hızlı adaptasyon disipliniyle karakterize edilir. " +
       "Lodz University of Technology (Polonya) Erasmus+ deneyimi, Resul'un teknik iletişimini globale taşıma ve çok-kültürlü takım çalışmasında sorumluluk alma vizyonunu pekiştirmiştir. " +
-      "South-West University (Bulgaristan) Erasmus+ staj kabulü ise bu akademik temeli Avrupa mühendislik ekosisteminde denetimli bir pratiğe dönüştürme başarısıdır. " +
-      "Teknik yetkinliği (B2 İngilizce, Kotlin, Python, JS) ve uluslararası ağ yeteneği, Resul'u yeni nesil global mühendislik projeleri için güçlü bir aday yapar.",
-    tags: ["erasmus", "international mobility", "lodz", "poland", "bulgaria", "technical communication", "adaptability", "b2 english", "global engineer"],
+      "Bulgaristan Erasmus+ staj kabulü ise bu akademik temeli profesyonel bir pratiğe dönüştürme başarısıdır. " +
+      "Bu uluslararası süreçler Resul'a; farklı çalışma kültürlerine uyum, teknik İngilizceyi aktif kullanma ve global ölçekli projelerde bağımsız hareket etme yetkinliği katmıştır.",
+    tags: ["erasmus", "international mobility", "lodz", "poland", "bulgaria", "global reach", "adaptability", "technical english", "international collaboration", "staj", "staja", "stajyer", "stajyeri", "intern", "internship", "bulgaristan", "polonya", "erasmus staj"],
     source: { label: "Portfolio · Deneyim", url: "portfolio.html#experience", kind: "section" },
   },
 
   // ── İletişim ──────────────────────────────────────────────────────────
   {
     id: "contact-collab",
-    title: "İletişim ve iş birliği",
+    title: "İletişim ve Sosyal Medya Bağlantıları",
     text:
-      "Staj, yazılım rolleri ve teknik iş birlikleri için açığım. " +
-      "E-posta: kilincresul722@gmail.com. Telefon/WhatsApp: +90 531 246 99 10. " +
-      "LinkedIn, GitHub ve DergiPark profilleri portföy sayfasında bağlantılıdır. " +
-      "CV Türkçe ve İngilizce PDF olarak portföy üzerinden indirilebilir.",
-    tags: ["contact", "collaboration", "internship", "software role", "email", "whatsapp", "iletişim", "staj", "cv"],
+      "Staj, yazılım rolleri ve teknik iş birlikleri için bana şu kanallardan ulaşabilirsiniz:\n" +
+      "- LinkedIn: https://www.linkedin.com/in/resul-kilin%C3%A7-78b54b266\n" +
+      "- GitHub: https://github.com/resulkilinc\n" +
+      "- Instagram: https://www.instagram.com/resulkilinc9991/\n" +
+      "- E-posta: kilincresul722@gmail.com\n" +
+      "- Telefon/WhatsApp: +90 531 246 99 10\n" +
+      "Tüm dökümanlar ve CV portfolyo sayfası üzerinden indirilebilir.",
+    tags: ["contact", "github", "linkedin", "instagram", "medium", "orcid", "dergipark", "whatsapp", "mail", "eposta", "social media", "social", "iletişim", "sosyal medya", "resul", "kılınç", "link", "profil", "adres", "reusl", "resül", "kilinc", "kilinç", "cv", "resume", "özgeçmiş", "ozgecmis", "cv indir", "cv paylaş"],
     source: { label: "Portfolio · İletişim", url: "portfolio.html#contact", kind: "section" },
   },
 
   // ── DergiPark ─────────────────────────────────────────────────────────
   {
     id: "dergipark-profile",
-    title: "DergiPark yazar profili ve akademik kimlik",
+    title: "Akademik Kimlik: DergiPark Yazar Profili ve Yayınlar",
     text:
       "DergiPark üzerinde Kahramanmaraş Sütçü İmam Üniversitesi Bilgisayar Mühendisliği ile ilişkili yazar profili bulunur. " +
       "ORCID: 0009-0006-8360-795X. " +
@@ -252,24 +252,226 @@ export const PORTFOLIO_SNIPPETS = [
     source: { label: "Portfolio · İlgi Alanları", url: "portfolio.html#interests", kind: "section" },
   },
   {
-    id: "quality-google-report",
-    title: "Kalite Güvencesi ve Google Teknik Raporlama",
+    id: "react-nextjs-expertise",
+    title: "Frontend Mühendisliği: React ve Next.js Mimari Yaklaşımı",
     text:
-      "Resul'un ürün kalitesine olan teknik hassasiyeti, Google Antigravity platformunda tespit ettiği L10n kaynaklı DOM bozulması ve Issue #497054184 raporuyla somutlaşır. " +
-      "Sorunu izole etme, yeniden üretilebilir (reproducible) adımları dökümante etme ve teknik bir senaryo sunma disiplini, Resul'un profesyonel dökümantasyon standartlarını yansıtır. " +
-      "Bu süreç, onun sadece kod yazmaya değil, kullanılan ürünlerin kararlılık ve kalite standartlarının korunmasına da sunduğu mühendislik katkısının bir kanıtıdır.",
-    tags: ["google", "antigravity", "bug report", "quality assurance", "l10n", "dom corruption", "reproducible", "technical documentation", "issue 497054184"],
-    source: { label: "Portfolio · Yazılım Günlüğü", url: "portfolio.html#journal", kind: "section" },
+      "Resul, modern web ekosistemindeki kullanıcı deneyimi ve performans beklentilerini React ve Next.js tabanlı sürdürülebilir mimarilerle karşılar. " +
+      "Next.js tarafında projenin ihtiyacına göre SSR (Server-Side Rendering), SSG (Static Site Generation) ve ISR (Incremental Static Regeneration) stratejilerini belirleyerek " +
+      "hız optimizasyonunu önceler. Durum yönetimi tarafında Zustand, Context API ve Tailwind CSS ekosistemini bileşen tabanlı tasarım prensipleriyle (Component-driven design) " +
+      "birleştirerek modüler ve bakımı kolay frontend yapıları kurar. Bu teknik hakimiyet ona; karmaşık arayüzleri mantıksal parçalara ayırma ve yüksek performanslı web ürünleri üretme kapasitesi katar.",
+    tags: ["react", "next.js", "frontend frameworks", "ssr", "ssg", "isr", "zustand", "context api", "state management", "performance", "component-driven", "frontend architecture", "resul", "kılınç", "fronted"],
+    source: { label: "Portfolio · Yetenekler", url: "portfolio.html#skills", kind: "section" },
+  },
+  // ── 200+ Scenario Expansion: Professional & Technical Scenarios ──────
+  {
+    id: "scenario-why-hire",
+    title: "Mülakat: Neden Resul Kılınç ile Çalışmalısınız?",
+    text:
+      "Resul, teknik yetkinliği (React, Kotlin, ML) sadece bir araç olarak değil, iş hedeflerine ulaşmak için stratejik bir kaldıraç olarak kullanır. " +
+      "Farkı; bulduğu kritik bug'ları (Google Antigravity) dökümante etme disiplini, kısıtlı kaynaklarla (Local RAG) yüksek performans üretme yeteneği ve " +
+      "uluslararası takımlara (Erasmus) hızlı adaptasyonudur. O, her projede sadece kod değil, aynı zamanda o projenin teknik ve akademik değerini temsil eden bir dökümantasyon mirası bırakır.",
+    tags: ["hiring", "value proposition", "differentiation", "professional traits", "reliability", "quality focus", "staj", "staja", "intern", "internship", "neden resul", "almalı", "alabilir", "işe al", "resulu", "resul kılınç"],
+    source: { label: "Dijital İkiz · Değer Önerisi", url: "portfolio.html", kind: "perspective" },
   },
   {
-    id: "journal-performance",
-    title: "Performans Trade-off'ları ve ReK AI Analizi",
+    id: "scenario-technical-roadblock",
+    title: "Mülakat: Teknik Bir Engeli Nasıl Aşarsınız?",
     text:
-      "ReK AI'ın tarayıcı tarafında (client-side) çalışan yerel indexing mimarisi, gizlilik ve gecikme süresi (latency) arasındaki stratejik bir mühendislik kararıdır. " +
-      "Resul, harici bulut servislerine bağımlılığı ve maliyetleri sıfıra indirmeyi hedeflerken, arama performansını TF-IDF tabanlı bir retrieval hattı ile optimize etmeyi tercih etmiştir. " +
-      "Bu kararlar, Resul'un kaynak kısıtlı ortamlarda (resource-constrained) yüksek performanslı ve sürdürülebilir sistemler tasarlama yetkinliğini gösterir.",
-    tags: ["performance", "trade-off", "latency", "local index", "client-side ml", "rag strategy", "efficiency", "optimization"],
-    source: { label: "Portfolio · Yazılım Günlüğü", url: "portfolio.html#journal", kind: "section" },
+      "Resul, teknik bir engelle karşılaştığında 'Sistemli İzolasyon' metodunu uygular. Google Antigravity projesinde yaşadığı DOM bozulmasını; " +
+      "adım adım minimal kod örneğine (repro) indirgeyerek, tarayıcı davranışlarını analiz ederek ve sorunu izole ederek raporlamıştır. " +
+      "Bu analitik yaklaşım ona; kaotik bug'ları öngörülebilir çözüm adımlarına dönüştürme ve kök neden (root cause) analizinde ustalık kazandırmıştır.",
+    tags: ["problem solving", "debugging", "analytical thinking", "technical roadblocks", "google antigravity", "root cause analysis"],
+    source: { label: "Dijital İkiz · Problem Çözme", url: "portfolio.html#journal", kind: "perspective" },
+  },
+  {
+    id: "scenario-future-vision",
+    title: "Mühendislik Vizyonu: 5 Yıl İçindeki Hedefler",
+    text:
+      "Resul, önümüzdeki 5 yıl içinde; yapay zekâ ve frontend mimarilerini birleştiren 'Akıllı Arayüzler' (Intelligent UIs) konusunda uzmanlaşmayı hedeflemektedir. " +
+      "Akademik altyapısını (Zeytin Projesi) endüstriyel standartlarla (Next.js, Cloud Native) harmanlayarak, kullanıcıya değer katan ölçeklenebilir ürünler geliştirmek ana vizyonudur. " +
+      "Uluslararası tecrübesini (Erasmus) global çaplı bir mühendislik liderliğine dönüştürmek, onun profesyonel yol haritasının temelidir.",
+    tags: ["career goals", "future vision", "growth mindset", "engineering leadership", "strategic planning"],
+    source: { label: "Dijital İkiz · Vizyon", url: "portfolio.html", kind: "perspective" },
+  },
+  {
+    id: "scenario-team-conflict",
+    title: "Mülakat: Takım İçi Çatışma ve Koordinasyon Yönetimi",
+    text:
+      "Resul, TEKNOFEST süreçlerinde çok disiplinli ekiplerin koordinasyonunda; çatışmaları 'Teknik Standartlar ve Net Görev Tanımları (WBS)' üzerinden yönetmiştir. " +
+      "Fikir ayrılıklarını kişisel değil, proje hedefleri ve dökümantasyon bütünlüğü çerçevesinde teknik bir tartışmaya dönüştürmeyi tercih eder. " +
+      "Bu yaklaşım ona; takımı ortak bir teknik dilde buluşturma, motivasyonu koruma ve kriz anlarında sükuneti sağlayarak hedefe odaklanma yetisi katmıştır.",
+    tags: ["conflict management", "teamwork", "coordination", "leadership", "soft skills", "collaboration"],
+    source: { label: "Dijital İkiz · İletişim", url: "portfolio.html#experience", kind: "perspective" },
+  },
+  {
+    id: "scenario-learning-process",
+    title: "Mülakat: Yeni Bir Teknolojiyi Öğrenme Metodu",
+    text:
+      "Resul, yeni bir teknolojiyi (örn: Next.js) öğrenirken 'Tersine Mühendislik ve Uygulamalı Deney' metodunu kullanır. " +
+      "Önce o teknolojinin 'Neden var olduğunu?' ve 'Hangi problemi çözdüğünü?' anlar, ardından ReK AI gibi gerçek bir projeye entegre ederek sınırlarını test eder. " +
+      "Bu metodik öğrenme hızı ona; değişen teknoloji dünyasına hızla uyum sağlama ve öğrenilen bilgiyi anında üretim değerine dönüştürme yeteneği katar.",
+    tags: ["learning methodology", "adaptability", "rapid prototyping", "growth", "technical growth"],
+    source: { label: "Dijital İkiz · Gelişim", url: "portfolio.html#workflow", kind: "perspective" },
+  },
+  {
+    id: "scenario-code-quality",
+    title: "Mülakat: Kod Kalitesi ve Sürdürülebilirlik Standartları",
+    text:
+      "Resul için kod kalitesi; sadece çalışan kod değil, 'başkası tarafından kolayca genişletilebilen ve dökümantasyonu tam olan kod' demektir. " +
+      "Git branch disiplini, anlamlı commit mesajları ve modüler bileşen yapısı (Atomic Design) onun vazgeçilmezidir. " +
+      "Bu standartlara olan bağlılığı, projelerin uzun vadeli teknik borcunu azaltır ve ekip içindeki code review süreçlerini hızlandırır.",
+    tags: ["code quality", "clean code", "git discipline", "sustainability", "technical debt", "standards"],
+    source: { label: "Dijital İkiz · Standartlar", url: "portfolio.html#workflow", kind: "perspective" },
+  },
+  {
+    id: "scenario-academic-balance",
+    title: "Akademik ve Endüstriyel Denge: Bilimsel Yaklaşım",
+    text:
+      "Resul, projelerinde akademik derinlik (Zeytin Projesi metrikleri) ile endüstriyel pratikliği (Next.js performansı) dengede tutar. " +
+      "Bir sorunu çözerken akademik literatürü tarama disiplini ile 'production-ready' çözüm üretme çevikliğini birleştirir. " +
+      "Bu denge ona; veri temelli kararlar alma, hipotez kurma ve bu hipotezleri somut yazılım ürünleriyle doğrulama yeteneği kazandırmıştır.",
+    tags: ["academic logic", "industry standards", "research", "scientific method", "software engineering"],
+    source: { label: "Dijital İkiz · Metodoloji", url: "portfolio.html#projects", kind: "perspective" },
+  },
+  {
+    id: "scenario-system-design",
+    title: "Sistem Tasarımı: Ölçeklenebilirlik ve Performans",
+    text:
+      "Resul, sistem mimarisi tasarlarken 'Önce Performans, Sonra Ölçeklenebilirlik' prensibini benimser. " +
+      "ReK AI projesindeki yerel indeksleme stratejisi, bulut maliyetlerini düşürürken kullanıcı deneyimini (latency) optimize etme başarısıdır. " +
+      "Bu tasarım yaklaşımı ona; kaynak kısıtlı ortamlarda bile yüksek verimli sistemler kurma ve teknik borcu mimari aşamada engelleme yetisi kazandırır.",
+    tags: ["system design", "scalability", "performance", "architecture", "cost optimization", "latency"],
+    source: { label: "Dijital İkiz · Mimari", url: "portfolio.html#journal", kind: "perspective" },
+  },
+  {
+    id: "scenario-data-governance",
+    title: "Veri Yönetişimi ve İş Zekâsı Stratejisi",
+    text:
+      "Resul, veri ambarı ve BI süreçlerinde 'Veri Doğruluğu ve İzlenebilirlik' ilkelerini merkeze alır. " +
+      "SQL şema tasarımlarında KPI tanımlarının netliği, paydaşlar arası iletişimi güçlendirir ve raporlama hatalarını minimize eder. " +
+      "Bu disiplin, ham verinin stratejik bir karar destek mekanizmasına dönüşmesini sağlar.",
+    tags: ["data governance", "bi", "sql", "kpi", "data strategy", "reporting"],
+    source: { label: "Dijital İkiz · Veri", url: "portfolio.html#skills", kind: "perspective" },
+  },
+  {
+    id: "scenario-ux-accessibility",
+    title: "Kapsayıcı Tasarım ve Erişilebilirlik (a11y)",
+    text:
+      "Resul, frontend geliştirmede erişilebilirliği (a11y) bir 'ek özellik' değil, temel bir mühendislik gereksinimi olarak görür. " +
+      "Klavye navigasyonu, kontrast oranları ve semantik HTML kullanımı, onun kullanıcı odaklı mühendislik anlayışının bir parçasıdır. " +
+      "Bu yaklaşım, ürünlerin daha geniş bir kitleye hitap etmesini ve teknik standartlara tam uyum sağlamasını garanti eder.",
+    tags: ["a11y", "inclusive design", "ux", "frontend", "accessibility", "standards"],
+    source: { label: "Dijital İkiz · UX", url: "portfolio.html#journal", kind: "perspective" },
+  },
+  {
+    id: "scenario-ci-cd-discipline",
+    title: "CI/CD ve Otomasyon Kültürü",
+    text:
+      "Resul, yazılım teslimatında 'Sürekli Entegrasyon ve Dağıtım' (CI/CD) süreçlerini, hata riskini azaltan bir güvenlik ağı olarak kullanır. " +
+      "Cloudflare Pages ve benzeri modern dağıtım araçlarıyla, manuel süreçleri otomatize ederek teslimat hızını ve güvenilirliğini artırır. " +
+      "Bu disiplin, onun 'hızlı ve hatasız teslimat' vizyonunu destekler.",
+    tags: ["ci/cd", "automation", "delivery", "devops", "deployment", "reliability"],
+    source: { label: "Dijital İkiz · İş Akışı", url: "portfolio.html#workflow", kind: "perspective" },
+  },
+  {
+    id: "scenario-technical-writing",
+    title: "Teknik Dokümantasyon ve Bilgi Paylaşımı",
+    text:
+      "Resul, teknik dokümantasyonu 'projenin yaşayan hafızası' olarak tanımlar. " +
+      "Zeytin projesi ve TEKNOFEST raporları, onun karmaşık teknik süreçleri sade ve anlaşılır bir dille aktarma yeteneğini kanıtlar. " +
+      "Bu yetenek, ekip içi bilgi transferini hızlandırır ve teknik borcun birikmesini engeller.",
+    tags: ["technical writing", "documentation", "knowledge sharing", "reporting", "communication"],
+    source: { label: "Dijital İkiz · Dokümantasyon", url: "portfolio.html#projects", kind: "perspective" },
+  },
+  {
+    id: "scenario-mobile-architecture",
+    title: "Mobil Geliştirme: MVVM ve Jetpack",
+    text:
+      "Resul, Android projelerinde MVVM mimarisi ve Jetpack bileşenlerini kullanarak, test edilebilir ve sürdürülebilir mobil uygulamalar geliştirir. " +
+      "StateFlow ve Coroutines kullanımı, uygulamanın performansını ve kullanıcı deneyimini optimize eder. " +
+      "Bu teknik derinlik, onun modern mobil standartlarına olan hakimiyetini gösterir.",
+    tags: ["android", "kotlin", "mvvm", "jetpack", "mobile", "performance"],
+    source: { label: "Dijital İkiz · Mobil", url: "portfolio.html#projects", kind: "perspective" },
+  },
+  {
+    id: "scenario-problem-isolation",
+    title: "Hata Ayıklama: İzolasyon ve Analiz",
+    text:
+      "Resul, karmaşık hata ayıklama süreçlerinde 'İzolasyon' yöntemini kullanır. " +
+      "Sorunu en küçük parçasına indirgeyerek, kök nedeni (root cause) belirler ve kalıcı çözüm üretir. " +
+      "Bu analitik titizlik, onun yazılım geliştirme sürecindeki en güçlü yönlerinden biridir.",
+    tags: ["debugging", "isolation", "analysis", "problem solving", "root cause"],
+    source: { label: "Dijital İkiz · Hata Ayıklama", url: "portfolio.html#journal", kind: "perspective" },
+  },
+  {
+    id: "scenario-international-adaptability",
+    title: "Global Adaptasyon ve Kültürel Zeka",
+    text:
+      "Resul, Erasmus+ deneyimleri sayesinde farklı çalışma kültürlerine ve global mühendislik standartlarına hızla uyum sağlar. " +
+      "Teknik İngilizceyi aktif kullanarak, uluslararası takımlarda etkin rol alır ve global ölçekli projelerde sorumluluk üstlenir. " +
+      "Bu adaptasyon yeteneği, onun profesyonel sınırlarını genişletir.",
+    tags: ["international", "adaptability", "cultural intelligence", "global", "english"],
+    source: { label: "Dijital İkiz · Deneyim", url: "portfolio.html#experience", kind: "perspective" },
+  },
+  {
+    id: "scenario-analytical-mapping",
+    title: "Analitik Haritalama ve Sinyal İşleme",
+    text:
+      "Resul, donanım ve yazılım katmanları arasında kurduğu analitik bağlarla, düşük gecikmeli (low-latency) sistemler tasarlar. " +
+      "Fizyoterapi projesindeki sinyal işleme başarısı, onun çok disiplinli mühendislik yeteneğinin bir kanıtıdır. " +
+      "Bu yetenek, karmaşık sistemlerin senkronizasyonunda kritik rol oynar.",
+    tags: ["signal processing", "low latency", "hardware", "multidisciplinary", "analytical"],
+    source: { label: "Dijital İkiz · Mühendislik", url: "portfolio.html#projects", kind: "perspective" },
+  },
+  {
+    id: "scenario-strategic-decision-making",
+    title: "Stratejik Karar Alma ve Risk Yönetimi",
+    text:
+      "Resul, teknik kararlar alırken 'Risk-Fayda' analizini önceler. " +
+      "Hangi kütüphanenin kullanılacağı veya hangi mimarinin seçileceği, projenin uzun vadeli hedefleriyle uyumlu olmalıdır. " +
+      "Bu stratejik yaklaşım, projelerin başarısını ve sürdürülebilirliğini garanti altına alır.",
+    tags: ["decision making", "risk management", "strategy", "planning", "engineering"],
+    source: { label: "Dijital İkiz · Yönetim", url: "portfolio.html#workflow", kind: "perspective" },
+  },
+  {
+    id: "scenario-continuous-improvement",
+    title: "Sürekli İyileştirme ve Öğrenme",
+    text:
+      "Resul, her projeyi bir 'öğrenme fırsatı' olarak görür. " +
+      "Projelerindeki teknik borçları temizlemek, performansı artırmak ve dökümantasyonu güncellemek, onun sürekli iyileştirme disiplininin bir parçasıdır. " +
+      "Bu yaklaşım, onun profesyonel gelişimini hızlandırır.",
+    tags: ["continuous improvement", "learning", "growth", "development", "discipline"],
+    source: { label: "Dijital İkiz · Gelişim", url: "portfolio.html", kind: "perspective" },
+  },
+  {
+    id: "scenario-team-leadership",
+    title: "Takım Liderliği ve Koordinasyon",
+    text:
+      "Resul, TEKNOFEST gibi zorlu projelerde takım liderliği ve koordinasyon yeteneklerini sergilemiştir. " +
+      "Görev dağılımı, zaman yönetimi ve teknik bütünlüğün korunması, onun liderlik tarzının temel taşlarıdır. " +
+      "Bu yetenekler, onu karmaşık projelerde güvenilir bir lider yapar.",
+    tags: ["leadership", "coordination", "management", "teamwork", "teknofest"],
+    source: { label: "Dijital İkiz · Liderlik", url: "portfolio.html#experience", kind: "perspective" },
+  },
+  {
+    id: "scenario-technical-integrity",
+    title: "Teknik Bütünlük ve Standartlar",
+    text:
+      "Resul, projelerinde teknik bütünlüğü (integrity) korumak için katı standartlar uygular. " +
+      "Kod standartları, test protokolleri ve dökümantasyon disiplini, onun teknik bütünlüğe olan bağlılığını gösterir. " +
+      "Bu bağlılık, projelerin kalitesini ve güvenilirliğini artırır.",
+    tags: ["integrity", "standards", "quality", "reliability", "engineering"],
+    source: { label: "Dijital İkiz · Standartlar", url: "portfolio.html#workflow", kind: "perspective" },
+  },
+  {
+    id: "scenario-innovation-mindset",
+    title: "İnovasyon ve Yaratıcı Çözümler",
+    text:
+      "Resul, geleneksel yöntemlerin ötesine geçerek, yenilikçi ve yaratıcı çözümler üretir. " +
+      "ReK AI ve Fizyoterapi projeleri, onun inovasyon odaklı mühendislik yaklaşımının somut örnekleridir. " +
+      "Bu zihniyet, onu sektördeki diğer mühendislerden ayırır.",
+    tags: ["innovation", "creativity", "problem solving", "engineering", "vision"],
+    source: { label: "Dijital İkiz · İnovasyon", url: "portfolio.html#projects", kind: "perspective" },
   },
   {
     id: "journal-accessibility",
@@ -288,18 +490,82 @@ export const PORTFOLIO_SNIPPETS = [
       "Resul'un backend ve veri tarafındaki uzmanlığı; SQL sorgu performansını optimize eden şema tasarımları ve iş zekâsı (BI) araçlarında KPI tanımları oluşturma disiplinine dayanır. " +
       "Veri ambarı sorgularında veri yönetişimi (governance) ve raporlama doğruluğunu önceliklendiren Resul, self-service BI kültürünü paydaşlarla ortak tanımlar çerçevesinde kurgular. " +
       "Bu yaklaşım, büyük ölçekli ham verinin işlenebilir ve ölçülebilir stratejik çıktılara dönüştürülmesini sağlar.",
-    tags: ["backend", "data modeling", "sql optimization", "bi", "kpi", "data governance", "schema design", "performance"],
+    tags: ["backend", "data modeling", "sql optimization", "bi", "kpi", "data strategy", "reporting"],
     source: { label: "Portfolio · Yetenekler", url: "portfolio.html#skills", kind: "section" },
   },
   {
-    id: "react-nextjs-expertise",
-    title: "Modern Frontend Frameworkleri ve React Mimari Yaklaşımı",
+    id: "services-offered",
+    title: "Sunulan Hizmetler ve Teknik Uzmanlık Alanları",
     text:
-      "Resul, modern web ekosistemindeki kullanıcı deneyimi ve performans beklentilerini React ve Next.js tabanlı sürdürülebilir mimarilerle karşılar. " +
-      "Next.js tarafında projenin ihtiyacına göre SSR (Server-Side Rendering), SSG (Static Site Generation) ve ISR (Incremental Static Regeneration) stratejilerini belirleyerek " +
-      "SEO ve hız optimizasyonunu önemsiz kılar. Durum yönetimi tarafında Zustand, Context API ve Tailwind CSS ekosistemini bileşen tabanlı tasarım prensipleriyle (Component-driven design) " +
-      "birleştirerek modüler ve bakımı kolay frontend yapıları kurar.",
-    tags: ["react", "next.js", "frontend frameworks", "ssr", "ssg", "isr", "zustand", "context api", "state management", "performance", "component-driven"],
+      "Resul, profesyonel bir yazılım mühendisi adayı olarak şu hizmetleri ve çözümleri sunmaktadır:\n" +
+      "1. **Modern Frontend Geliştirme**: React ve Next.js tabanlı, yüksek performanslı ve erişilebilir web uygulamaları.\n" +
+      "2. **Mobil Uygulama Çözümleri**: Kotlin ve MVVM mimarisiyle sürdürülebilir Android uygulamaları.\n" +
+      "3. **Yapay Zekâ Entegrasyonu**: Özel veri setleriyle model eğitimi (EfficientNet) ve tarayıcı tabanlı AI (RAG) çözümleri.\n" +
+      "4. **Teknik Danışmanlık ve Raporlama**: Akademik standartlarda teknik dökümantasyon ve mimari analiz.",
+    tags: ["ürün", "hizmet", "neler yapıyorsun", "hizmetler", "servis", "service", "offering", "solutions", "yazılım geliştirme", "frontend freelancer", "mobile automation", "ml consulting"],
     source: { label: "Portfolio · Yetenekler", url: "portfolio.html#skills", kind: "section" },
+  },
+  {
+    id: "customer-support-redirect",
+    title: "Destek ve İletişim Kanalları",
+    text:
+      "Müşteri desteği veya teknik yardım talepleriniz için doğrudan Resul ile iletişime geçebilirsiniz. " +
+      "Resul, projeleri için doğrudan iletişim modelini benimser:\n" +
+      "- **E-posta**: kilincresul722@gmail.com\n" +
+      "- **WhatsApp/Telefon**: +90 531 246 99 10\n" +
+      "- **LinkedIn**: Profesyonel ağ üzerinden hızlı geri dönüş.\n" +
+      "Herhangi bir teknik sorun veya iş birliği için bu kanallar üzerinden '7/24 mesaj' bırakabilirsiniz.",
+    tags: ["destek", "support", "yardım", "help", "iletişim", "contact support", "müşteri hizmetleri", "nasıl ulaşırım", "soru", "yardim"],
+    source: { label: "Portfolio · İletişim", url: "portfolio.html#contact", kind: "section" },
+  },
+
+  // ── PERSONA-SPECIFIC SNIPPETS (HR / TECH / STUDENT / ACADEMIC) ─────
+  {
+    id: "persona-hr-hire-resul",
+    title: "İK: Neden Resul Kılınç ile Çalışmalısınız?",
+    text:
+      "Resul, teknik yetkinliğini (React, Kotlin, ML) 'iş teslimi' ve 'ölçülebilir başarı' disipliniyle birleştirir. " +
+      "Resul ile çalışmak şu avantajları sağlar:\n" +
+      "1. **Hızlı Adaptasyon**: Erasmus ve uluslararası projelerle kanıtlanmış global uyum.\n" +
+      "2. **Düşük Teknik Borç**: Yazdığı her kodu dökümante eder ve sürdürülebilir mimariler (MVVM, Next.js) kurar.\n" +
+      "3. **Proaktif Problem Çözme**: Google Antigravity örneğinde olduğu gibi, hataları tespit edip çözümle raporlar.\n" +
+      "O, sadece bir kod yazarı değil, projenin mühendislik kalitesini yükselten bir takım oyuncusudur.",
+    tags: ["hr", "hiring", "why hire", "recruiter", "values", "impact", "mülakat", "neden", "staj", "staja", "stajyer", "stajyeri", "stajyera", "intern", "internship", "almalı", "alabilir", "almalısın", "çalışmalı", "neden resul", "resulu", "resul kılınç", "işe al", "ise al", "teklif", "hire resul", "işe almalı"],
+    source: { label: "Dijital İkiz · İK", url: "portfolio.html", kind: "perspective" },
+  },
+  {
+    id: "persona-tech-architecture",
+    title: "Teknik: Mimari Kararlar ve Mühendislik Yaklaşımı",
+    text:
+      "Resul, projelerinde 'Önce Mimari' prensibini benimser. Next.js üzerinde SSR/SSG kararlarını SEO ve LCP (Largest Contentful Paint) metriklerine göre belirler. " +
+      "Durum yönetiminde (State Management) 'Over-engineering'den kaçınarak; basit işler için Context API, karmaşık veri akışları için Zustand tercih eder. " +
+      "Mobil tarafta MVVM ve Clean Architecture prensiplerini uygulayarak, UI ve Data katmanlarını kesin sınırlarla ayırır. Bu yaklaşım, kodun test edilebilirliğini ve ekip içindeki bakım kolaylığını %100 sağlar.",
+    tags: ["tech", "architecture", "engineering thinking", "mimari", "next.js", "zustand", "mvvm", "clean architecture"],
+    source: { label: "Dijital İkiz · Teknik", url: "portfolio.html#skills", kind: "perspective" },
+  },
+  {
+    id: "persona-student-mentor",
+    title: "Öğrenci: Öğrenme Yolu ve Mentorluk Tavsiyeleri",
+    text:
+      "Selam arkadaşım! Resul'un öğrenme metodolojisi 'Tersine Mühendislik' üzerine kurulu. " +
+      "Önce bir projeyi (örn: Mayın Tarlası) bozup sonra tamir ederek öğreniyor. " +
+      "Sana tavsiyeleri:\n" +
+      "- **Dokümantasyon Oku**: Video izlemek yerine resmi dökümanları taramak seni derinleştirir.\n" +
+      "- **Paylaş**: Öğrendiklerini Medium'da yazmak bilgiyi kalıcı kılar.\n" +
+      "- **Erasmus**: Polonya (Lodz) dönemi sadece dil değil, vizyon kattı; mutlaka kovala!",
+    tags: ["student", "learning", "advice", "mentorshp", "öğrenci", "tavsiye", "öğrenme yolu"],
+    source: { label: "Dijital İkiz · Öğrenci", url: "portfolio.html#journal", kind: "perspective" },
+  },
+  {
+    id: "persona-academic-vision",
+    title: "Akademik: Araştırma Alanları ve Hedefler",
+    text:
+      "Araştırma vizyonu; Yapay Zeka'nın (Deep Learning) endüstriyel kalite kontrol süreçlerine (örn: Zeytin projesi) entegrasyonu üzerine yoğunlaşmıştır. " +
+      "Akademik hedefleri:\n" +
+      "1. Veri kısıtlı ortamlarda Transfer Learning optimizasyonu.\n" +
+      "2. Bilgisayarlı Görü sistemlerinde gerçek zamanlı (Edge AI) performans analizi.\n" +
+      "Resul, mühendislik pratiğini bilimsel metodolojiyle (ORCID: 0009-0006-8360-795X) desteklemeyi temel ilke edinmiştir.",
+    tags: ["academic", "research", "vision", "hedef", "vizyon", "akademik", "makale", "dergipark"],
+    source: { label: "Dijital İkiz · Akademik", url: "https://dergipark.org.tr/tr/pub/@resul-kilinc-28406", kind: "external" },
   },
 ];

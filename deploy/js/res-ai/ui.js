@@ -2,9 +2,9 @@
  * ReK AI modal: open/close, chips, pipeline visualization, chat wiring.
  */
 
-import { answerQuery, streamAnswer } from "./engine.js?v=20260329l";
-import { appendBubble, clearContainer, renderAssistantResult } from "./render.js?v=20260329l";
-import { saveMessage, loadHistory, clearHistory } from "./storage.js?v=20260329l";
+import { answerQuery, streamAnswer } from "./engine.js?v=20260330f";
+import { appendBubble, clearContainer, renderAssistantResult } from "./render.js?v=20260330f";
+import { saveMessage, loadHistory, clearHistory } from "./storage.js?v=20260330f";
 
 /**
  * @param {HTMLDialogElement | null} dialog
@@ -34,6 +34,8 @@ export function initResAiModal(dialog) {
   var tabPanels = Array.prototype.slice.call(dialog.querySelectorAll("[data-res-ai-tab-panel]"));
   var diagnosticsHistory = [];
   var lastAssistantResult = null;
+  var isQueryRunning = false;
+  var queryQueue = [];
   var SESSION_SUMMARY_KEY = "rek-ai-last-session-summary-v1";
   var PREFS_KEY = "rek-ai-ui-prefs-v1";
   var GUARD_PRESETS = { strict: 4.6, normal: 3.2, relaxed: 2.4 };
@@ -619,25 +621,44 @@ export function initResAiModal(dialog) {
     renderSessionComparison(summarizeRecords(last));
   }
 
-  async function runQuery(text) {
-    if (!chatLog || !text.trim()) return;
+  function persistMessageAsync(row) {
+    saveMessage(row).catch(function () {
+      /* ignore persistence failures to keep chat flow responsive */
+    });
+  }
+
+  function enqueueQuery(text) {
+    var value = String(text || "").trim();
+    if (!value) return;
+    queryQueue.push(value);
+    if (!isQueryRunning) {
+      processNextQuery();
+    }
+  }
+
+  async function processNextQuery() {
+    if (isQueryRunning || !queryQueue.length || !chatLog) return;
+    isQueryRunning = true;
+    var text = queryQueue.shift();
     var t0 = Date.now();
     var mode = modeSelect && modeSelect.value === "source_first" ? "source_first" : "balanced";
     var guardThreshold = getGuardThreshold();
     var guardPreset = getGuardPreset();
     var retrievalDepth = getRetrievalDepth();
-    appendBubble(chatLog, "user", text.trim(), false);
-    await saveMessage({ role: "user", content: text.trim(), ts: Date.now() });
+
+    appendBubble(chatLog, "user", text, false);
+    persistMessageAsync({ role: "user", content: text, ts: Date.now() });
 
     setPipelineStep("retrieve");
     await new Promise(function (r) {
-      setTimeout(r, 200);
+      setTimeout(r, 60);
     });
     setPipelineStep("rank");
     await new Promise(function (r) {
-      setTimeout(r, 180);
+      setTimeout(r, 60);
     });
     setPipelineStep("compose");
+
     var acc = "";
     var bubbleInner = appendBubble(chatLog, "assistant", "", false);
     bubbleInner.classList.add("is-streaming");
@@ -647,6 +668,7 @@ export function initResAiModal(dialog) {
       maxSources: retrievalDepth,
       currentPage: currentPage,
     });
+
     if (mode !== "source_first" && result.metrics && Number(result.metrics.topScore) < guardThreshold) {
       var fallback = answerQuery(text, {
         mode: "source_first",
@@ -685,18 +707,21 @@ export function initResAiModal(dialog) {
     } catch (e) {
       bubbleInner.classList.remove("is-streaming");
       bubbleInner.textContent = "Yanıt oluşturulurken bir sorun oluştu.";
+    } finally {
+      persistMessageAsync({
+        role: "assistant",
+        content: acc,
+        format: "rek_result_v1",
+        payload: JSON.stringify(result),
+        ts: Date.now(),
+      });
+      setPipelineStep("done");
+      setTimeout(function () {
+        setPipelineStep("idle");
+      }, 600);
+      isQueryRunning = false;
+      if (queryQueue.length) processNextQuery();
     }
-    await saveMessage({
-      role: "assistant",
-      content: acc,
-      format: "rek_result_v1",
-      payload: JSON.stringify(result),
-      ts: Date.now(),
-    });
-    setPipelineStep("done");
-    setTimeout(function () {
-      setPipelineStep("idle");
-    }, 600);
   }
 
   if (form && input) {
@@ -704,7 +729,7 @@ export function initResAiModal(dialog) {
       e.preventDefault();
       var v = input.value;
       input.value = "";
-      runQuery(v);
+      enqueueQuery(v);
     });
   }
 
@@ -718,7 +743,7 @@ export function initResAiModal(dialog) {
     if (input) input.value = q;
     setActiveConsoleTab("chat");
     saveUiPrefs();
-    runQuery(q);
+    enqueueQuery(q);
   });
 
   if (sidebarToggle && platformRoot) {
@@ -736,7 +761,7 @@ export function initResAiModal(dialog) {
       var nextQuery = btn.getAttribute("data-suggestion-query") || "";
       if (!nextQuery.trim()) return;
       if (input) input.value = nextQuery;
-      runQuery(nextQuery);
+      enqueueQuery(nextQuery);
     });
   }
 
