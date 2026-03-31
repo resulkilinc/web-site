@@ -169,7 +169,7 @@
       <span class="top-dock__chip-icon top-dock__chip-icon--gmail" aria-hidden="true">M</span>
       <span class="top-dock__chip-label">Gmail</span>
     </button>
-    <a class="top-dock__chip top-dock__chip--home" href="index.html" data-portfolio-exit-sfx="true" title="Ana sayfaya dön">Ana Sayfa</a>
+    <a class="top-dock__chip top-dock__chip--home" href="index.html" data-portfolio-exit-sfx="true" title="Ana sayfaya dön">Ana sayfa</a>
   </div>
 
   <header class="mobile-header" aria-label="Üst çubuk">
@@ -897,7 +897,7 @@
   </div>
 
   <dialog class="modal modal--res-ai" id="res-ai-modal" aria-labelledby="res-ai-modal-title">
-    <div class="rek-platform rek-platform--controls-open">
+    <div class="rek-platform">
       <header class="rek-platform__header">
         <div class="rek-platform__header-top">
           <div class="rek-platform__brand">
@@ -920,6 +920,16 @@
             <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="diagnostics" aria-pressed="false">Diagnostics</button>
             <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="workflows" aria-pressed="false">Workflows</button>
             <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="knowledge" aria-pressed="false">Knowledge Base</button>
+            <button
+              type="button"
+              class="rek-platform__tab"
+              data-res-ai-sidebar-toggle
+              aria-expanded="false"
+              aria-controls="rek-ai-sidebar-panel"
+              title="Temel kontrolleri göster / gizle"
+            >
+              Kontroller
+            </button>
           </nav>
           <div class="rek-platform__header-end">
             <div class="rek-platform__header-badge">
@@ -935,7 +945,10 @@
       <div class="rek-platform__workspace">
         <aside class="rek-platform__sidebar glass-panel" id="rek-ai-sidebar-panel">
           <section class="rek-sidebar__section">
-            <h3 class="rek-sidebar__heading">Temel kontroller</h3>
+            <h3 class="rek-sidebar__heading">
+              Temel kontroller
+              <button type="button" class="rek-platform__close" data-res-ai-controls-close aria-label="Kontrolleri kapat">&times;</button>
+            </h3>
             <div class="rek-sidebar__field">
               <label class="rek-sidebar__label" for="res-ai-mode">Yanıt modu</label>
               <select id="res-ai-mode" class="rek-sidebar__select" data-res-ai-mode>
@@ -978,9 +991,6 @@
         <main class="rek-platform__stage">
           <div class="rek-platform__panel is-active" data-res-ai-tab-panel="chat">
             <div class="rek-chat-stage rek-chat-stage--focus">
-              <button type="button" class="rek-controls-toggle" data-res-ai-sidebar-toggle aria-expanded="true" aria-controls="rek-ai-sidebar-panel" title="Temel kontrolleri göster / gizle">
-                Kontroller
-              </button>
               <div class="rek-chat-layout">
                 <div class="rek-chat-thread">
                   <div class="rek-chat-canvas">
@@ -1204,7 +1214,7 @@
   <script src="js/main.js?v=20260325b"></script>
   <script src="js/contact-modal.js"></script>
   <script src="js/rek-ai-float-launcher.js?v=20260329m" defer></script>
-  <script type="module" src="js/res-ai/app.js?v=20260330f"></script>
+  <script type="module" src="js/res-ai/app.js?v=20260331a"></script>
   <script>
     (function () {
       var sfxCtx = null;

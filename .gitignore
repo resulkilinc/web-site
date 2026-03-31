@@ -1,22 +1,27 @@
-# MacOS
-.DS_Store
+# Personal & Sensitive Data
+vcc4/
+assets/cv/
+*.pdf
+!assets/makale-zeytin.pdf
 
-# IDEs
-.cursor/
-.vscode/
-.idea/
-
-# Backups
-*-YEDEK.html
-*-YEDEK.js
-*-YEDEK.css
-
-# Environment / Tools
+# Redundant / Deployment
+deploy/
+_routes.json
 .wrangler/
-node_modules/
-
-# Local files
-GERI-DONUS.txt
 sync-deploy.sh
-test-bug.mjs
-test-engine.mjs
+GERI-DONUS.txt
+
+# Backup & Temporary
+*-ONCEKI-YEDEK.html
+test-*.mjs
+
+# AI Sources (Moved to rek-ai-engine)
+rek-sources/
+
+# Environment / Tooling
+.cursor/
+.DS_Store
+node_modules/
+npm-debug.log
+.env
+.env.*

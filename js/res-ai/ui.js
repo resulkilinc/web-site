@@ -41,7 +41,8 @@ export function initResAiModal(dialog) {
   var GUARD_PRESETS = { strict: 4.6, normal: 3.2, relaxed: 2.4 };
   var previousSessionSummary = loadPreviousSessionSummary();
   var platformRoot = dialog.querySelector(".rek-platform");
-  var sidebarToggle = dialog.querySelector("[data-res-ai-sidebar-toggle]");
+  var sidebarToggles = Array.prototype.slice.call(dialog.querySelectorAll("[data-res-ai-sidebar-toggle]"));
+  var controlsCloseButtons = Array.prototype.slice.call(dialog.querySelectorAll("[data-res-ai-controls-close]"));
   var chatContextEl = dialog.querySelector("[data-res-ai-chat-context]");
 
   function escAttr(s) {
@@ -74,7 +75,11 @@ export function initResAiModal(dialog) {
   function setControlsOpen(open) {
     if (!platformRoot) return;
     platformRoot.classList.toggle("rek-platform--controls-open", !!open);
-    if (sidebarToggle) sidebarToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    if (sidebarToggles.length) {
+      sidebarToggles.forEach(function (btn) {
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
     saveUiPrefs();
   }
 
@@ -156,16 +161,22 @@ export function initResAiModal(dialog) {
       setActiveConsoleTab("chat");
     }
     if (platformRoot) {
-      if (prefs && Object.prototype.hasOwnProperty.call(prefs, "controlsOpen") && typeof prefs.controlsOpen === "boolean") {
-        platformRoot.classList.toggle("rek-platform--controls-open", prefs.controlsOpen);
-      } else {
-        platformRoot.classList.add("rek-platform--controls-open");
+      var isMobile = !!(window.matchMedia && window.matchMedia("(max-width: 720px)").matches);
+      var shouldOpen = isMobile ? false : true;
+      if (
+        !isMobile &&
+        prefs &&
+        Object.prototype.hasOwnProperty.call(prefs, "controlsOpen") &&
+        typeof prefs.controlsOpen === "boolean"
+      ) {
+        shouldOpen = prefs.controlsOpen;
       }
-      if (sidebarToggle) {
-        sidebarToggle.setAttribute(
-          "aria-expanded",
-          platformRoot.classList.contains("rek-platform--controls-open") ? "true" : "false"
-        );
+      platformRoot.classList.toggle("rek-platform--controls-open", shouldOpen);
+      if (sidebarToggles.length) {
+        var expanded = platformRoot.classList.contains("rek-platform--controls-open") ? "true" : "false";
+        sidebarToggles.forEach(function (btn) {
+          btn.setAttribute("aria-expanded", expanded);
+        });
       }
     }
   }
@@ -746,9 +757,19 @@ export function initResAiModal(dialog) {
     enqueueQuery(q);
   });
 
-  if (sidebarToggle && platformRoot) {
-    sidebarToggle.addEventListener("click", function () {
-      setControlsOpen(!platformRoot.classList.contains("rek-platform--controls-open"));
+  if (platformRoot && sidebarToggles.length) {
+    sidebarToggles.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        setControlsOpen(!platformRoot.classList.contains("rek-platform--controls-open"));
+      });
+    });
+  }
+
+  if (platformRoot && controlsCloseButtons.length) {
+    controlsCloseButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        setControlsOpen(false);
+      });
     });
   }
 
@@ -956,6 +977,10 @@ export function initResAiModal(dialog) {
   document.querySelectorAll("[data-open-res-ai]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       dialog.showModal();
+      setActiveConsoleTab("chat");
+      if (window.matchMedia && window.matchMedia("(max-width: 720px)").matches) {
+        setControlsOpen(false);
+      }
     });
   });
 }

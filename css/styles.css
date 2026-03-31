@@ -2908,19 +2908,20 @@ dialog.modal--res-ai::backdrop {
 .top-dock {
   position: fixed;
   top: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 1.25rem;
+  left: auto;
+  transform: none;
   z-index: 1000;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0.8rem;
-  background: rgba(18, 10, 14, 0.72);
+  gap: 0.55rem;
+  padding: 0.48rem 0.6rem;
+  background: rgba(10, 6, 9, 0.62);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 999px;
   box-shadow: 
     0 16px 48px rgba(0, 0, 0, 0.5),
@@ -2940,19 +2941,29 @@ dialog.modal--res-ai::backdrop {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.55rem 1.1rem;
+  padding: 0.52rem 0.92rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
   color: #f4f4f5;
   font-family: var(--font-sans);
-  font-size: 0.84rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 650;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   white-space: nowrap;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.top-dock__chip:focus-visible {
+  outline: none;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.38),
+    0 0 0 3px rgba(244, 63, 94, 0.22);
+  border-color: rgba(244, 63, 94, 0.5);
 }
 
 .top-dock__chip:hover {
@@ -2982,7 +2993,7 @@ a.top-dock__chip {
   flex-direction: row;
   align-items: center;
   gap: 0.6rem;
-  padding-right: 0.5rem;
+  padding-right: 0.45rem;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -2994,6 +3005,32 @@ a.top-dock__chip {
   color: rgba(255, 255, 255, 0.5);
   line-height: 1;
   pointer-events: none;
+}
+
+.top-dock__chip-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.18);
+}
+
+.top-dock__chip--mail .top-dock__chip-icon {
+  background: linear-gradient(180deg, rgba(244, 63, 94, 0.22), rgba(244, 63, 94, 0.08));
+  border-color: rgba(244, 63, 94, 0.25);
+}
+
+.top-dock__chip--ai .top-dock__chip-icon {
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.24), rgba(168, 85, 247, 0.08));
+  border-color: rgba(168, 85, 247, 0.22);
+}
+
+.top-dock__chip--home {
+  background: linear-gradient(180deg, rgba(244, 63, 94, 0.18), rgba(255, 255, 255, 0.03));
+  border-color: rgba(244, 63, 94, 0.22);
 }
 
 /* İletişim modalı — portföy teması, açılış animasyonu */
@@ -3711,6 +3748,10 @@ dialog.modal--res-ai .modal__header {
 
 .rek-sidebar__heading {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;

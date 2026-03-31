@@ -122,6 +122,20 @@
 <body
   class="min-h-screen bg-zinc-950 text-zinc-100 antialiased flex flex-col selection:bg-rose-900/50"
 >
+  <div class="top-dock" aria-label="Hızlı işlemler">
+    <button type="button" class="top-dock__chip top-dock__chip--ai" data-open-res-ai title="ReK AI — yazılım soruları için yerel asistan">
+      <span class="top-dock__chip-icon top-dock__chip-icon--deer" aria-hidden="true">
+        <svg viewBox="0 0 48 56" aria-hidden="true"><use href="#ai-deer-silhouette" /></svg>
+      </span>
+      <span class="top-dock__chip-label">ReK AI</span>
+    </button>
+    <button type="button" class="top-dock__chip top-dock__chip--mail" data-open-contact-modal="true" title="İletişim formu">
+      <span class="top-dock__chip-icon top-dock__chip-icon--gmail" aria-hidden="true">M</span>
+      <span class="top-dock__chip-label">Gmail</span>
+    </button>
+    <a class="top-dock__chip top-dock__chip--home" href="portfolio.html" data-portfolio-enter-sfx="true" title="Tam portföyü aç">Tam portföy</a>
+  </div>
+
   <a
     class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[200] focus:rounded-lg focus:bg-rose-950 focus:px-3 focus:py-2 focus:text-sm focus:outline-none focus:ring-2 focus:ring-rose-400"
     href="portfolio.html"
@@ -138,11 +152,17 @@
         <path d="M17 30h14" stroke="#e9d5ff" stroke-width="1.1" stroke-linecap="round" opacity="0.88" />
         <rect x="21" y="9" width="6" height="5" rx="1.2" fill="#a855f7" opacity="0.9" />
       </symbol>
+      <symbol id="ai-deer-silhouette" viewBox="0 0 48 56">
+        <path
+          fill="currentColor"
+          d="M24 0 L18 14 L15 3 L12 18 L6 2 L9 20 L14 22 L11 28 L17 24 L20 32 L24 26 L28 32 L31 24 L37 28 L34 22 L39 20 L42 2 L36 18 L33 3 L30 14 Z M24 30 L17 34 L15 49 L19 54 L24 51 L29 54 L33 49 L31 34 Z"
+        />
+      </symbol>
     </defs>
   </svg>
 
   <main
-    class="w-full max-w-[1280px] mx-auto px-3 pt-3 pb-2 sm:px-4 sm:pt-4 grid grid-cols-12 gap-2.5 sm:gap-3"
+    class="w-full max-w-[1280px] mx-auto px-3 pt-3 pb-2 sm:px-4 sm:pt-4 grid grid-cols-12 gap-2.5 sm:gap-3 lg:min-h-[calc(100vh-5.5rem)] lg:content-between lg:pb-6"
   >
     <!-- Hero -->
     <header
@@ -186,10 +206,10 @@
           </a>
           <button
             type="button"
-            data-modal-open="modal-cv"
+            data-open-contact-modal="true"
             class="inline-flex items-center rounded-xl border border-zinc-600 bg-zinc-900/80 px-3 py-2 text-xs font-semibold text-zinc-200 hover:border-rose-500/40 hover:text-white transition"
           >
-            CV (PDF)
+            CV (Request via Mail)
           </button>
         </div>
       </div>
@@ -199,11 +219,11 @@
     <a
       href="portfolio.html"
       data-portfolio-enter-sfx="true"
-      class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center rounded-2xl border-2 border-rose-500/50 bg-gradient-to-br from-rose-950/80 via-zinc-900 to-zinc-950 p-3 text-center shadow-lg shadow-rose-950/40 transition duration-300 hover:scale-[1.03] hover:border-rose-400 hover:shadow-2xl hover:shadow-rose-900/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-300"
+      class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center rounded-2xl border-2 border-rose-500/50 bg-gradient-to-br from-rose-950/80 via-zinc-900 to-zinc-950 p-3 lg:p-6 lg:min-h-[10rem] text-center shadow-lg shadow-rose-950/40 transition duration-300 hover:scale-[1.03] hover:border-rose-400 hover:shadow-2xl hover:shadow-rose-900/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-300"
     >
-      <span class="text-[10px] font-bold uppercase tracking-widest text-rose-300">Tam deneyim</span>
-      <span class="mt-1 font-display text-sm sm:text-base font-bold text-white">Tam portföy</span>
-      <span class="mt-0.5 text-[10px] text-rose-200/70">Mevcut tam site düzeni →</span>
+      <span class="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-rose-300">Tam deneyim</span>
+      <span class="mt-1 font-display text-sm sm:text-base lg:text-xl font-bold text-white">Tam portföy</span>
+      <span class="mt-0.5 text-[10px] lg:text-[11px] text-rose-200/70">Mevcut tam site düzeni →</span>
     </a>
 
     <!-- Portfolio hint notice -->
@@ -216,7 +236,7 @@
     <button
       type="button"
       data-modal-open="modal-exp"
-      class="col-span-6 sm:col-span-3 lg:col-span-2 group flex min-h-[5.1rem] flex-col justify-center overflow-hidden rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+      class="col-span-6 sm:col-span-3 lg:col-span-2 group flex min-h-[5.1rem] lg:min-h-[6.9rem] flex-col justify-center overflow-hidden rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 lg:p-6 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
     >
       <span class="text-[10px] font-bold uppercase tracking-widest text-rose-400/80">Kariyer</span>
       <span class="mt-1 block font-display text-sm sm:text-base font-semibold text-white group-hover:text-rose-100"
@@ -227,7 +247,7 @@
     <button
       type="button"
       data-modal-open="modal-proj"
-      class="col-span-6 sm:col-span-4 lg:col-span-3 group flex min-h-[5.1rem] flex-col justify-center overflow-hidden rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+      class="col-span-6 sm:col-span-4 lg:col-span-3 group flex min-h-[5.1rem] lg:min-h-[6.9rem] flex-col justify-center overflow-hidden rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 lg:p-6 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
     >
       <span class="text-[10px] font-bold uppercase tracking-widest text-rose-400/80">Vitrin</span>
       <span class="mt-1 block font-display text-sm sm:text-base font-semibold text-white group-hover:text-rose-100"
@@ -238,7 +258,7 @@
     <button
       type="button"
       data-modal-open="modal-int"
-      class="col-span-12 sm:col-span-4 lg:col-span-3 group rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+      class="col-span-12 sm:col-span-4 lg:col-span-3 group flex min-h-[5.1rem] lg:min-h-[6.9rem] flex-col justify-center rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 lg:p-6 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
     >
       <span class="text-[10px] font-bold uppercase tracking-widest text-rose-400/80">Kişisel</span>
       <span class="mt-1 block font-display text-sm sm:text-base font-semibold text-white group-hover:text-rose-100"
@@ -250,7 +270,7 @@
     <button
       type="button"
       data-modal-open="modal-about"
-      class="col-span-6 sm:col-span-3 group rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+      class="col-span-6 sm:col-span-3 group min-h-[3.6rem] lg:min-h-[5.2rem] rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 lg:p-5 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
     >
       <span class="font-display text-sm font-medium text-zinc-200">Hakkımda</span>
     </button>
@@ -258,7 +278,7 @@
     <button
       type="button"
       data-modal-open="modal-edu"
-      class="col-span-6 sm:col-span-3 group rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+      class="col-span-6 sm:col-span-3 group min-h-[3.6rem] lg:min-h-[5.2rem] rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 lg:p-5 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
     >
       <span class="font-display text-sm font-medium text-zinc-200">Eğitim</span>
     </button>
@@ -266,7 +286,7 @@
     <button
       type="button"
       data-modal-open="modal-skills"
-      class="col-span-6 sm:col-span-3 group rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+      class="col-span-6 sm:col-span-3 group min-h-[3.6rem] lg:min-h-[5.2rem] rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 lg:p-5 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
     >
       <span class="font-display text-sm font-medium text-zinc-200">Yetenekler</span>
     </button>
@@ -597,31 +617,11 @@
     </div>
   </dialog>
 
-  <dialog id="modal-cv" class="pro-modal rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-md w-[min(100%,22rem)] shadow-2xl" aria-labelledby="modal-cv-title">
-    <div class="flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95">
-      <h2 id="modal-cv-title" class="font-display text-lg font-semibold text-white">CV indir</h2>
-      <form method="dialog">
-        <button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button>
-      </form>
-    </div>
-    <div class="px-4 py-4 space-y-3">
-      <p class="text-sm text-zinc-400">İndirmeden önce dil seçin.</p>
-      <div class="flex flex-col gap-2">
-        <a
-          href="assets/cv/cv-tr.pdf"
-          download="Resul_Kilinc_CV_TR.pdf"
-          class="inline-flex justify-center rounded-xl bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-rose-500 transition"
-          >Türkçe PDF</a
-        >
-        <a
-          href="assets/cv/cv-en.pdf"
-          download="Resul_Kilinc_CV_EN.pdf"
-          class="inline-flex justify-center rounded-xl border border-zinc-600 bg-zinc-800/80 px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-rose-500/40 transition"
-          >English PDF</a
-        >
-      </div>
-    </div>
+  <!-- CV Modal sanitized - contact via mail for professional requests -->
+  <!--
+  <dialog id="modal-cv" ...>
   </dialog>
+  -->
 
   <dialog class="modal modal--gmail" id="contact-modal" aria-labelledby="contact-modal-title">
     <div class="gmail-compose">
@@ -686,7 +686,7 @@
   </dialog>
 
   <dialog id="res-ai-modal" class="modal modal--res-ai rek-index-ai" aria-labelledby="rek-ai-index-title">
-    <div class="rek-platform rek-platform--index rek-platform--controls-open">
+    <div class="rek-platform rek-platform--index">
       <header class="rek-platform__header">
         <div class="rek-platform__header-top">
           <div class="rek-platform__brand">
@@ -709,6 +709,16 @@
             <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="diagnostics" aria-pressed="false">Diagnostics</button>
             <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="workflows" aria-pressed="false">Workflows</button>
             <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="knowledge" aria-pressed="false">Knowledge Base</button>
+            <button
+              type="button"
+              class="rek-platform__tab"
+              data-res-ai-sidebar-toggle
+              aria-expanded="false"
+              aria-controls="rek-ai-sidebar-panel"
+              title="Temel kontrolleri göster / gizle"
+            >
+              Kontroller
+            </button>
           </nav>
           <div class="rek-platform__header-end">
             <div class="rek-platform__header-badge">
@@ -724,7 +734,10 @@
       <div class="rek-platform__workspace">
         <aside class="rek-platform__sidebar glass-panel" id="rek-ai-sidebar-panel">
           <section class="rek-sidebar__section">
-            <h3 class="rek-sidebar__heading">Temel kontroller</h3>
+            <h3 class="rek-sidebar__heading">
+              Temel kontroller
+              <button type="button" class="rek-platform__close" data-res-ai-controls-close aria-label="Kontrolleri kapat">&times;</button>
+            </h3>
             <div class="rek-sidebar__field">
               <label class="rek-sidebar__label" for="rek-ai-index-mode">Yanıt modu</label>
               <select id="rek-ai-index-mode" class="rek-sidebar__select" data-res-ai-mode>
@@ -767,9 +780,6 @@
         <main class="rek-platform__stage">
           <div class="rek-platform__panel is-active" data-res-ai-tab-panel="chat">
             <div class="rek-chat-stage rek-chat-stage--focus">
-              <button type="button" class="rek-controls-toggle" data-res-ai-sidebar-toggle aria-expanded="true" aria-controls="rek-ai-sidebar-panel" title="Temel kontrolleri göster / gizle">
-                Kontroller
-              </button>
               <div class="rek-chat-layout">
                 <div class="rek-chat-thread">
                   <div class="rek-chat-canvas">
@@ -987,6 +997,6 @@
   <script src="js/contact-config.js"></script>
   <script src="js/contact-modal.js"></script>
   <script src="js/rek-ai-float-launcher.js?v=20260329m" defer></script>
-  <script type="module" src="js/res-ai/app.js?v=20260330f"></script>
+  <script type="module" src="js/res-ai/app.js?v=20260331a"></script>
 </body>
 </html>
