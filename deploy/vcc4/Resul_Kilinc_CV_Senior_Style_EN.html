@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resul Kılınç — Özgeçmiş (A4)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f172a;
+      --body: #334155;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --accent: #881337;
+      --accent-soft: #fce7f3;
+      --link: #2563eb;
+      --link-hover: #1d4ed8;
+      --link-underline: rgba(37, 99, 235, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e8edf3;
+      color: var(--body);
+      font-family: "IBM Plex Sans", "Segoe UI", "Noto Sans", system-ui, sans-serif;
+      line-height: 1.32;
+      font-size: 11.35pt;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen: exact A4 width for WYSIWYG preview */
+    .sheet {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 12px auto;
+      background: #fff;
+      box-shadow: 0 8px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    .page {
+      padding: 7.2mm 2.85mm 6.2mm;
+      min-height: 297mm;
+    }
+
+    h1,
+    h2,
+    p,
+    ul {
+      margin: 0;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 67mm;
+      gap: 4mm 2.5mm;
+      align-items: start;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .name {
+      font-size: 27px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+    }
+
+    .subtitle {
+      margin-top: 3px;
+      font-size: 9.95pt;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.32;
+    }
+
+    .tagline {
+      margin-top: 4px;
+      font-size: 10.25pt;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1.28;
+    }
+
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: linear-gradient(160deg, #fafafa, #fff);
+      padding: 6px 8px 7px;
+      text-align: right;
+      font-size: 9.25pt;
+      line-height: 1.36;
+    }
+
+    .contact-card__label {
+      font-size: 7.8pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-card__row {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--body);
+    }
+
+    /* Tıklanabilir bağlantılar — mavi, hafif alt çizgi (ekranda ve PDF’de) */
+    .sheet a {
+      color: var(--link);
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      text-decoration-color: var(--link-underline);
+    }
+
+    .sheet a:hover {
+      color: var(--link-hover);
+      text-decoration-color: currentColor;
+    }
+
+    .contact-card .sep {
+      color: #cbd5e1;
+      margin: 0 3px;
+    }
+
+    .summary {
+      background: linear-gradient(98deg, var(--accent-soft) 0%, #fff 50%);
+      border-left: 3px solid var(--accent);
+      padding: 6px 8px 6px 10px;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-size: 10.5pt;
+      line-height: 1.32;
+    }
+
+    .col-narrative {
+      padding-right: 2mm;
+      border-right: 1px solid var(--line);
+    }
+
+    .section-title {
+      font-size: 9.4pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      margin-bottom: 4px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section {
+      margin-bottom: 4px;
+    }
+
+    .edu-block,
+    .lang-block,
+    .timeline-desc,
+    .interests-line,
+    .skill-pile,
+    .tools-line {
+      font-size: 10.4pt;
+      line-height: 1.31;
+      color: var(--body);
+    }
+
+    .edu-block strong,
+    .lang-block strong {
+      color: var(--ink);
+    }
+
+    .edu-meta {
+      font-size: 9.25pt;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .timeline-entry {
+      margin-bottom: 3px;
+    }
+
+    .timeline-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 1px;
+    }
+
+    .timeline-title {
+      font-weight: 700;
+      font-size: 10.1pt;
+      color: var(--ink);
+    }
+
+    .timeline-when {
+      font-size: 8.85pt;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .skill-pile strong {
+      display: block;
+      font-size: 8.7pt;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+
+    .skill-pile strong:first-child {
+      margin-top: 0;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin-top: 4px;
+    }
+
+    .pill {
+      font-size: 8.35pt;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      color: #475569;
+    }
+
+    .compact-list {
+      margin: 2px 0 0;
+      padding-left: 14px;
+      font-size: 9.85pt;
+      line-height: 1.3;
+    }
+
+    .compact-list li {
+      margin-bottom: 2px;
+      color: var(--body);
+    }
+
+    .highlight-projects ul {
+      margin: 2px 0 0;
+      padding-left: 14px;
+      font-size: 9.7pt;
+      line-height: 1.31;
+      color: var(--body);
+    }
+
+    .highlight-projects li {
+      margin-bottom: 3px;
+    }
+
+    .portfolio-mini {
+      margin-top: 5px;
+      padding-top: 5px;
+      border-top: 1px dashed var(--line);
+      font-size: 9.7pt;
+      line-height: 1.31;
+      color: var(--body);
+    }
+
+    .portfolio-mini strong {
+      color: var(--ink);
+    }
+
+    .highlight-projects li strong {
+      color: var(--ink);
+    }
+
+    .approach-box {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fafcfe;
+      padding: 5px 6px;
+      margin-bottom: 4px;
+    }
+
+    .approach-box ul {
+      margin: 0;
+      padding-left: 14px;
+      font-size: 9.75pt;
+      line-height: 1.3;
+      color: var(--body);
+    }
+
+    .approach-box li {
+      margin-bottom: 2px;
+    }
+
+    .soft-skills ul {
+      margin: 2px 0 0;
+      padding-left: 14px;
+      font-size: 9.8pt;
+      line-height: 1.3;
+      color: var(--body);
+    }
+
+    .soft-skills li {
+      margin-bottom: 2px;
+    }
+
+    .page-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0 3mm;
+      align-items: stretch;
+    }
+
+    .col-narrative,
+    .col-technical {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Print: ISO A4 — 210mm × 297mm; scale tuned so one physical page, readable */
+    @media print {
+      @page {
+        size: 210mm 297mm;
+        margin: 0;
+      }
+
+      html,
+      body {
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        min-height: 297mm;
+      }
+
+      .page {
+        padding: 5.25mm 2.5mm 4.25mm;
+      }
+
+      body {
+        zoom: 0.748;
+      }
+
+      .sheet a {
+        color: var(--link) !important;
+        text-decoration: underline !important;
+        text-decoration-color: var(--link-underline) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="page">
+      <header class="header">
+        <div>
+          <h1 class="name">Resul Kılınç</h1>
+          <p class="subtitle">Üçüncü sınıf lisans · Bilgisayar Mühendisliği · Kahramanmaraş Sütçü İmam Üniversitesi (KSÜ)</p>
+          <p class="tagline">Sistem düşüncesi · yazılım mühendisliği · uygulamalı ML · uluslararası ekip deneyimi</p>
+        </div>
+        <aside class="contact-card" aria-label="İletişim">
+          <div class="contact-card__label">İletişim ve profiller</div>
+          <div class="contact-card__row"><a href="mailto:kilincresul722@gmail.com">kilincresul722@gmail.com</a></div>
+          <div class="contact-card__row"><a href="tel:+905312469910">+90 531 246 99 10</a></div>
+          <div class="contact-card__row">
+            <a href="https://resulkilinc.com">resulkilinc.com</a><span class="sep">|</span><a href="https://github.com/resulkilinc">GitHub</a><span class="sep">|</span><a href="https://www.linkedin.com/in/resul-kilin%C3%A7-78b54b266">LinkedIn</a>
+          </div>
+          <div class="contact-card__row"><a href="https://medium.com/@resulkilinc">medium.com/@resulkilinc</a></div>
+          <div class="contact-card__row">ORCID <a href="https://orcid.org/0009-0006-8360-795X">0009-0006-8360-795X</a></div>
+          <div class="contact-card__row"><a href="https://dergipark.org.tr/tr/pub/@resul-kilinc-28406">DergiPark yazar profili</a></div>
+        </aside>
+      </header>
+
+      <p class="summary">
+        KSÜ Bilgisayar Mühendisliği’nde okuyorum; <strong>algoritmalar</strong>, <strong>yazılım mühendisliği</strong> ve <strong>uygulamalı makine öğrenmesi</strong> üzerine dersler, laboratuvarlar ve projelerde
+        aktif çalışıyorum. B2 İngilizce ile teknik dokümantasyon yazıyor ve ekiplerle iletişimi yürütüyorum; <strong>Erasmus+</strong> ile öğrenim ve staj hareketliliğinde yer aldım.
+        <strong>ML</strong>, <strong>web</strong> ve <strong>Android</strong> tarafında mimari kararları netleştiriyorum, uygulanabilir çözümler üretiyorum ve teslimi önceliklendiriyorum.
+      </p>
+
+      <div class="page-main">
+        <div class="col-narrative">
+          <section class="section">
+            <h2 class="section-title">Eğitim</h2>
+            <p class="edu-block">
+              <strong>Bilgisayar Mühendisliği (lisans)</strong> — Kahramanmaraş Sütçü İmam Üniversitesi (KSÜ), Türkiye.<br />
+              <span class="edu-meta">2023 — devam · üçüncü sınıf</span>
+            </p>
+            <p class="edu-block" style="margin-top: 3px">
+              Bu alanlarda ders ve laboratuvar aldım; takım projelerinde çıktı ürettim: <strong>veri yapıları</strong>, <strong>nesne yönelimli programlama</strong>, <strong>veritabanları</strong>, <strong>ağlar</strong>, <strong>işletim sistemleri</strong>,
+              <strong>yazılım mühendisliği</strong>, <strong>mimari</strong>, <strong>YZ/ML</strong>, <strong>web</strong>.
+            </p>
+            <p class="edu-block" style="margin-top: 3px">
+              <strong>İngilizce hazırlık</strong> — 2022 (KSÜ). <strong>Lisans programına 2023</strong> yılında başladım; akademik okuma, yazma ve konuşma temelini hazırlık yılında attım.
+            </p>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Diller</h2>
+            <p class="lang-block">
+              <strong>Türkçe</strong> — ana dilim.<br />
+              <strong>İngilizce</strong> — B2 (CEFR): derslerde, dokümantasyonda ve iş birliğinde yazılı ve sözlü iletişimi kullanıyorum.<br />
+              <strong>İspanyolca</strong> — A1; aktif olarak geliştiriyorum.
+            </p>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Deneyim ve faaliyetler</h2>
+            <div class="timeline-entry">
+              <div class="timeline-head">
+                <span class="timeline-title">Erasmus+ öğrenim hareketliliği</span>
+                <span class="timeline-when">Polonya</span>
+              </div>
+              <p class="timeline-desc">
+                <strong>Lodz University of Technology:</strong> İngilizce derslere katıldım, ortak ödevler üstlendim ve kültürlerarası takımlarda çalıştım; uluslararası akademik ortama uyum sağladım.
+              </p>
+            </div>
+            <div class="timeline-entry">
+              <div class="timeline-head">
+                <span class="timeline-title">Erasmus+ staj kabulü</span>
+                <span class="timeline-when">Bulgaristan</span>
+              </div>
+              <p class="timeline-desc">
+                <strong>South-West University &quot;Neofit Rilski&quot;</strong>, Blagoevgrad — resmî Erasmus+ staj hareketliliği kabulüm kayıtlı; AB ekosisteminde denetimli mühendislik pratiğine hazırlandım.
+              </p>
+            </div>
+            <div class="timeline-entry">
+              <div class="timeline-head">
+                <span class="timeline-title">TEKNOFEST</span>
+                <span class="timeline-when">Ulusal</span>
+              </div>
+              <p class="timeline-desc">
+                <strong>Uluslararası İHA</strong> ve <strong>İnsansız Su Altı Sistemleri</strong> için iki ulusal başvuruda görev aldım; iş paketlerini ve kilometre taşlarını takip ettim, teknik raporları ve jüriye entegrasyon notlarını hazırladım.
+              </p>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">İlgi alanları</h2>
+            <p class="interests-line">
+              Satranç, yazılım geliştirme, makine öğrenmesi, donanım, tenis ve yeni dillerle uğraşıyorum; mühendislikte düzenli düşünme ve sürekli öğrenmeyi önemsiyorum.
+            </p>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Mühendislik pratikleri</h2>
+            <ul class="compact-list">
+              <li><strong>Keşif:</strong> Kodlamadan önce kapsamı, kısıtları ve başarı ölçütlerini netleştiriyorum.</li>
+              <li><strong>İzlenebilirlik:</strong> Anlamlı commit’ler, kısa tasarım notları ve incelemeye hazır teslimi sürdürüyorum.</li>
+              <li><strong>Kalite:</strong> Temel test, erişilebilirlik ve performansı gözetiyorum; yinelemeli teslim ediyorum.</li>
+            </ul>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Akademik kimlik ve görünürlük</h2>
+            <p class="timeline-desc">
+              <strong>ORCID</strong> ve <strong>DergiPark</strong> üzerinden akademik kimliğimi görünür kılıyorum. Zeytin olgunluğu (bilgisayarlı görü) çalışmamı yürüttüm; metin şu an akademik değerlendirme sürecinde — ayrıntıları portföyümde paylaşıyorum.
+            </p>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">İş birliği ve hedefler</h2>
+            <p class="timeline-desc">
+              Kültürlerarası takımlarda çalışıyor, İngilizce teknik iletişimi ve son tarihli teslimleri yönetiyorum. Kod incelemesi, geri bildirim ve iteratif geliştirmeyi düzenli uyguluyorum.
+              <strong>Yazılım mühendisliği stajı</strong> ve ürün odaklı ekiplerde (ML, web, Android) sorumluluk alıp somut çıktı üretmeyi hedefliyorum.
+            </p>
+          </section>
+        </div>
+
+        <div class="col-technical">
+          <section class="section">
+            <h2 class="section-title">Temel teknik beceriler</h2>
+            <div class="skill-pile">
+              <strong>Ön uç</strong>
+              JavaScript ile modüler arayüz ve durum yönetimi kuruyorum; anlamsal HTML/CSS, duyarlı yerleşim ve erişilebilir bileşenler geliştiriyorum.
+              <strong>Arka uç ve veri</strong>
+              Python ile veri hazırlığı ve deneyler yürütüyorum; SQL, metrik odaklı raporlama ve API’ye uygun erişim kalıplarını uyguluyorum.
+              <strong>Makine öğrenmesi</strong>
+              TensorFlow ve PyTorch ile aktarımlı öğrenme ve ince ayar yapıyorum; sınıf dengesizliğini ele alıyor, yalnızca doğruluğa değil, seçtiğim metriklere göre değerlendiriyorum.
+              <strong>Mobil ve sistemler</strong>
+              Kotlin (Android), Java ve C++ ile geliştiriyorum; izlenebilir commit’ler ve inceleme odaklı Git akışını kullanıyorum.
+            </div>
+            <div class="pill-row">
+              <span class="pill">JavaScript</span>
+              <span class="pill">Python</span>
+              <span class="pill">SQL</span>
+              <span class="pill">Kotlin</span>
+              <span class="pill">TensorFlow</span>
+              <span class="pill">PyTorch</span>
+              <span class="pill">Git</span>
+            </div>
+            <p class="tools-line" style="margin-top: 4px">
+              <strong>Ayrıca:</strong> HTML5/CSS3, ES modülleri, REST/JSON ve Markdown kullanıyorum; statik barındırma, kanonik URL ve indeks dostu işaretlemeyi uyguluyorum.
+            </p>
+          </section>
+
+          <section class="section approach-box">
+            <h2 class="section-title">Mühendislik yaklaşımı</h2>
+            <ul>
+              <li><strong>Mimari netlik:</strong> Gereksinim, sınır ve teslim kriterlerini kodlamadan önce yazıyorum.</li>
+              <li><strong>Kalite odağı:</strong> Testlenebilir yapı, loglama ve izlenebilir sürüm geçmişiyle ilerliyorum.</li>
+              <li><strong>Ekip etkisi:</strong> Teknik not, kod incelemesi ve net handoff ile ekip hızına katkı veriyorum.</li>
+            </ul>
+          </section>
+
+          <section class="section highlight-projects">
+            <h2 class="section-title">Öne çıkan projeler</h2>
+            <ul>
+              <li>
+                <strong>ML tabanlı anomali tespiti:</strong> TensorFlow/PyTorch ile zaman serisinde anomali tespiti için model seçtim, hiperparametre optimizasyonu ve ölçümleme odaklı bir akışı kurdum.
+              </li>
+              <li>
+                <strong>E-ticaret mikroservisleri:</strong> Spring Boot, Docker, Kubernetes ve AWS üzerinde ölçeklenebilir servis mimarisini tasarladım; PostgreSQL ve RabbitMQ ile veri ve mesaj yönetimini kurguladım.
+              </li>
+              <li>
+                <strong>Mobil uygulama:</strong> Kotlin, MVVM ve Clean Architecture ile biyometrik doğrulama, güvenli token yönetimi ve katmanlı API entegrasyonunu geliştirdim.
+              </li>
+              <li>
+                <strong>Açık kaynak katkıları:</strong> Apache Flink benzeri projelere hata düzeltme ve iyileştirme PR’ları gönderdim; test ve uyumluluğu gözeterek katkı verdim.
+              </li>
+              <li>
+                <strong>TEKNOFEST otonom araç:</strong> Python/OpenCV ile görüntü işleme, sensör füzyonu ve şerit/nesne takibini geliştirdim; saha testlerini ve teknik raporları hazırladım.
+              </li>
+            </ul>
+            <p class="portfolio-mini">
+              <strong>Portföy ve akademik çizgi:</strong> Zeytin olgunluğu (EfficientNet-B0), ReK AI tarayıcı asistanı, kişisel portföy sitemi ve Kotlin tabanlı Android çalışmamı geliştirdim; teknik özetleri <a href="https://resulkilinc.com">resulkilinc.com</a> üzerinde yayınlıyorum.
+            </p>
+          </section>
+
+          <section class="section soft-skills">
+            <h2 class="section-title">Kişisel ve profesyonel beceriler</h2>
+            <ul>
+              <li>Yapay zeka araçlarını üretkenlik ve hız için etkili şekilde kullanıyorum.</li>
+              <li>Takım içinde açık teknik iletişim kuruyor ve görevleri net paylaşıyorum.</li>
+              <li>Analitik düşünüyor, kök nedeni araştırıyor ve çözüm odaklı ilerliyorum.</li>
+              <li>Sürekli öğreniyor ve yeni teknolojiye hızlıca uyum sağlıyorum.</li>
+              <li>Git/GitHub ile düzenli sürüm yönetimi ve izlenebilir geliştirmeyi sürdürüyorum.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

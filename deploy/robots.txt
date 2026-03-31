@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://resulkilinc.com/sitemap.xml
+Sitemap: https://resulkilinc.com/sitemap.txt

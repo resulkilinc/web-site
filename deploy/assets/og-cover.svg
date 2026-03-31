@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Resul K1l1n� portf�y">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f0e14"/>
+      <stop offset="100%" style="stop-color:#3d1d28"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="80" y="280" fill="#f7f1ee" font-family="system-ui,sans-serif" font-size="56" font-weight="600">Resul K1l1n�</text>
+  <text x="80" y="360" fill="#d9a8b4" font-family="system-ui,sans-serif" font-size="32">Yaz1l1m portf�y�</text>
+</svg>

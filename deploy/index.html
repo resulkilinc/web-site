@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark h-full">
+<head>
+  <meta charset="utf-8" />
+  <script>
+    (function () {
+      try {
+        var k = "rk-theme";
+        var t = localStorage.getItem(k);
+        if (t !== "light" && t !== "dark") t = "dark";
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.classList.toggle("dark", t === "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Resul Kılınç — bilgisayar mühendisliği öğrencisi; yazılım, yapay zekâ ve portföy." />
+  <meta name="theme-color" content="#09090b" />
+  <title>Resul Kılınç | Portföy</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://resulkilinc.com/" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+            display: ["Source Serif 4", "Georgia", "serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css?v=20260325i" />
+  <style>
+    .pro-modal::backdrop {
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(6px);
+    }
+
+    .pro-modal {
+      border-color: rgba(190, 24, 93, 0.25);
+      background: linear-gradient(160deg, rgba(24, 24, 27, 0.96), rgba(9, 9, 11, 0.96));
+      overflow: hidden;
+    }
+
+    .pro-modal [data-anim] {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: modalItemIn 420ms ease forwards;
+    }
+
+    .pro-modal [data-anim="2"] { animation-delay: 70ms; }
+    .pro-modal [data-anim="3"] { animation-delay: 130ms; }
+    .pro-modal [data-anim="4"] { animation-delay: 190ms; }
+    .pro-modal [data-anim="5"] { animation-delay: 250ms; }
+    .pro-modal [data-anim="6"] { animation-delay: 310ms; }
+    .pro-modal [data-anim="7"] { animation-delay: 370ms; }
+    .pro-modal [data-anim="8"] { animation-delay: 430ms; }
+
+    .pro-pill {
+      border: 1px solid rgba(190, 24, 93, 0.26);
+      background: rgba(24, 24, 27, 0.7);
+      border-radius: 9999px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.68rem;
+      line-height: 1;
+      color: rgb(251, 207, 232);
+      letter-spacing: 0.03em;
+      font-weight: 600;
+    }
+
+    .pro-card {
+      border: 1px solid rgba(113, 113, 122, 0.28);
+      background: linear-gradient(140deg, rgba(24, 24, 27, 0.88), rgba(17, 24, 39, 0.55));
+      border-radius: 0.9rem;
+      padding: 0.72rem 0.78rem;
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .pro-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(251, 113, 133, 0.5);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.38);
+    }
+
+    .pro-card__title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #fff;
+      margin: 0 0 0.35rem;
+    }
+
+    .pro-card__text {
+      margin: 0;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: #d4d4d8;
+    }
+
+    @keyframes modalItemIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body
+  class="h-dvh max-h-dvh overflow-hidden bg-zinc-950 text-zinc-100 antialiased flex flex-col selection:bg-rose-900/50"
+>
+  <a
+    class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[200] focus:rounded-lg focus:bg-rose-950 focus:px-3 focus:py-2 focus:text-sm focus:outline-none focus:ring-2 focus:ring-rose-400"
+    href="portfolio.html"
+    >Tam portföy içeriğine geç</a
+  >
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0; overflow: hidden" aria-hidden="true">
+    <defs>
+      <symbol id="rek-ai-robot-hud" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="21" fill="rgba(6, 2, 14, 0.55)" stroke="#d946ef" stroke-width="1.25" />
+        <rect x="13" y="15" width="22" height="16" rx="3.5" fill="none" stroke="#e9d5ff" stroke-width="1.1" opacity="0.92" />
+        <circle cx="18.5" cy="23" r="2.35" fill="#22d3ee" />
+        <circle cx="29.5" cy="23" r="2.35" fill="#22d3ee" />
+        <path d="M17 30h14" stroke="#e9d5ff" stroke-width="1.1" stroke-linecap="round" opacity="0.88" />
+        <rect x="21" y="9" width="6" height="5" rx="1.2" fill="#a855f7" opacity="0.9" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <main
+    class="flex-1 min-h-0 w-full max-w-[1280px] mx-auto px-3 pt-3 pb-2 sm:px-4 sm:pt-4 grid grid-cols-12 gap-2.5 sm:gap-3 grid-rows-[auto_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] sm:grid-rows-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1fr)]"
+  >
+    <!-- Hero -->
+    <header
+      class="col-span-12 sm:col-span-5 lg:col-span-4 row-span-1 sm:row-span-2 flex flex-row items-start gap-3 sm:gap-4 rounded-2xl border border-rose-900/35 bg-gradient-to-br from-zinc-900/95 via-zinc-950 to-zinc-950 p-3.5 sm:p-4 shadow-xl shadow-black/40"
+    >
+      <div class="flex-shrink-0">
+        <div
+          class="h-16 w-16 sm:h-24 sm:w-24 rounded-2xl ring-2 ring-rose-500/30 ring-offset-2 ring-offset-zinc-950 overflow-hidden bg-zinc-800"
+        >
+          <img
+            src="assets/photo-index-portrait.png"
+            alt=""
+            width="96"
+            height="96"
+            class="h-full w-full object-cover"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+      <div class="min-w-0 flex-1 text-left flex flex-col justify-center">
+        <h1 class="font-display text-xl sm:text-2xl font-semibold tracking-tight text-white">Resul Kılınç</h1>
+        <p class="mt-0.5 text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-rose-300/90">
+          Applied ML · Bilgisayar Mühendisliği
+        </p>
+        <p class="mt-2 text-[11px] sm:text-sm leading-relaxed text-zinc-400">
+          Uygulamalı makine öğrenmesi ve ölçeklenebilir yazılım mimarileri odağında uçtan uca sistemler tasarlıyorum. Karmaşık
+          problemleri veri odaklı yaklaşımla analiz eder, teknik çözümü iş hedefiyle hizalarım. Net iletişim, öngörülebilir teslimat
+          ve sürdürülebilir kod kalitesi çalışma standardım. Akademik temelli disiplini üretim gerçekleriyle birleştiriyorum.
+        </p>
+        <div class="mt-3 flex flex-wrap items-center justify-start gap-2">
+          <a
+            href="javascript:void(0)"
+            data-open-contact-modal="true"
+            class="relative z-20 inline-flex items-center gap-2 rounded-xl bg-white text-zinc-900 px-3.5 py-2 text-xs sm:text-sm font-bold shadow-lg shadow-rose-900/20 hover:bg-rose-50 transition"
+          >
+            <span class="grid h-6 w-6 place-items-center rounded-full bg-gradient-to-br from-red-500 to-amber-400 text-[10px] text-white font-black"
+              >M</span
+            >
+            Gmail ile yaz
+          </a>
+          <button
+            type="button"
+            data-modal-open="modal-cv"
+            class="inline-flex items-center rounded-xl border border-zinc-600 bg-zinc-900/80 px-3 py-2 text-xs font-semibold text-zinc-200 hover:border-rose-500/40 hover:text-white transition"
+          >
+            CV (PDF)
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tam portföy: special (mobilde ilk kart) -->
+    <a
+      href="portfolio.html"
+      data-portfolio-enter-sfx="true"
+      class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center rounded-2xl border-2 border-rose-500/50 bg-gradient-to-br from-rose-950/80 via-zinc-900 to-zinc-950 p-3 text-center shadow-lg shadow-rose-950/40 transition duration-300 hover:scale-[1.03] hover:border-rose-400 hover:shadow-2xl hover:shadow-rose-900/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-300"
+    >
+      <span class="text-[10px] font-bold uppercase tracking-widest text-rose-300">Tam deneyim</span>
+      <span class="mt-1 font-display text-sm sm:text-base font-bold text-white">Tam portföy</span>
+      <span class="mt-0.5 text-[10px] text-rose-200/70">Mevcut tam site düzeni →</span>
+    </a>
+
+    <!-- Bento: row 1 right -->
+    <button
+      type="button"
+      data-modal-open="modal-exp"
+      class="col-span-6 sm:col-span-3 lg:col-span-2 group flex min-h-[5.1rem] flex-col justify-center overflow-hidden rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+    >
+      <span class="text-[10px] font-bold uppercase tracking-widest text-rose-400/80">Özet</span>
+      <span class="mt-1 block font-display text-sm sm:text-base font-semibold text-white group-hover:text-rose-100"
+        >Deneyimlerim</span
+      >
+    </button>
+
+    <button
+      type="button"
+      data-modal-open="modal-proj"
+      class="col-span-6 sm:col-span-4 lg:col-span-3 group flex min-h-[5.1rem] flex-col justify-center overflow-hidden rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+    >
+      <span class="text-[10px] font-bold uppercase tracking-widest text-rose-400/80">Vitrin</span>
+      <span class="mt-1 block font-display text-sm sm:text-base font-semibold text-white group-hover:text-rose-100"
+        >Projelerim</span
+      >
+    </button>
+
+    <button
+      type="button"
+      data-modal-open="modal-int"
+      class="col-span-12 sm:col-span-4 lg:col-span-3 group rounded-2xl border border-rose-900/30 bg-zinc-900/70 p-3 sm:p-4 text-left shadow-lg transition duration-300 hover:scale-[1.02] hover:border-rose-400/45 hover:shadow-xl hover:shadow-rose-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+    >
+      <span class="text-[10px] font-bold uppercase tracking-widest text-rose-400/80">Kişisel</span>
+      <span class="mt-1 block font-display text-sm sm:text-base font-semibold text-white group-hover:text-rose-100"
+        >İlgi alanlarım</span
+      >
+    </button>
+
+    <!-- Row 2 -->
+    <button
+      type="button"
+      data-modal-open="modal-about"
+      class="col-span-6 sm:col-span-3 group rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+    >
+      <span class="font-display text-sm font-medium text-zinc-200">Hakkımda</span>
+    </button>
+
+    <button
+      type="button"
+      data-modal-open="modal-edu"
+      class="col-span-6 sm:col-span-3 group rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+    >
+      <span class="font-display text-sm font-medium text-zinc-200">Eğitim</span>
+    </button>
+
+    <button
+      type="button"
+      data-modal-open="modal-skills"
+      class="col-span-6 sm:col-span-3 group rounded-2xl border border-zinc-800 bg-zinc-900/50 p-3 text-left transition duration-300 hover:scale-[1.02] hover:border-rose-500/35 hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+    >
+      <span class="font-display text-sm font-medium text-zinc-200">Yetenekler</span>
+    </button>
+
+    <!-- Row 3: wide strip -->
+    <div
+      class="col-span-12 rounded-2xl border border-dashed border-zinc-700/80 bg-zinc-900/30 px-3 py-2 flex items-center justify-between gap-2"
+    >
+      <p class="text-[11px] sm:text-xs text-zinc-500 truncate">
+        Yerel asistan <strong class="text-zinc-400">ReK AI</strong> ile içerik bazlı sorularını burada da yanıtlayabilirsin.
+      </p>
+      <button
+        type="button"
+        data-open-res-ai
+        class="shrink-0 rounded-lg border border-rose-700/40 bg-zinc-900 px-2.5 py-1 text-[11px] font-semibold text-rose-200 hover:border-rose-400/60 hover:text-rose-100 transition"
+      >
+        ReK AI
+      </button>
+    </div>
+  </main>
+
+  <footer
+    class="flex-shrink-0 border-t border-zinc-800/80 bg-zinc-950/90 px-3 py-2 sm:px-4 flex flex-wrap items-center justify-between gap-2 text-[11px] text-zinc-500"
+  >
+    <div class="flex items-center gap-3">
+      <a
+        href="https://github.com/resulkilinc"
+        class="text-zinc-400 hover:text-white transition"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="GitHub"
+        ><svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a
+      >
+      <a
+        href="https://www.linkedin.com/in/resul-kilin%C3%A7-78b54b266"
+        class="text-zinc-400 hover:text-white transition"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="LinkedIn"
+        ><svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a
+      >
+      <a
+        href="https://dergipark.org.tr/tr/pub/@resul-kilinc-28406"
+        class="text-zinc-400 hover:text-white transition text-[11px] font-medium"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="DergiPark yazar profili"
+        >DergiPark</a
+      >
+      <a
+        href="https://www.instagram.com/resulkilinc9991/"
+        class="text-zinc-400 hover:text-white transition"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="Instagram"
+        ><svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a
+      >
+      <a
+        href="https://wa.me/905312469910"
+        class="text-zinc-400 hover:text-white transition"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="WhatsApp"
+        ><svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a
+      >
+    </div>
+    <p class="text-zinc-600">© <span id="y"></span> Resul Kılınç</p>
+  </footer>
+
+  <!-- Modals -->
+  <dialog id="modal-exp" class="rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-lg w-[min(100%,28rem)] max-h-[min(92vh,44rem)] shadow-2xl">
+    <div class="sticky top-0 flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95 backdrop-blur">
+      <h2 class="font-display text-lg font-semibold text-white">Deneyimlerim</h2>
+      <form method="dialog"><button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button></form>
+    </div>
+    <div class="overflow-y-auto px-4 py-3 text-sm text-zinc-300 space-y-3 max-h-[calc(92vh-4rem)]">
+      <p><strong class="text-rose-200">Lisans</strong> — KSÜ Bilgisayar Mühendisliği (2022–devam): laboratuvarlar, takım projeleri, teori ve pratik.</p>
+      <p><strong class="text-rose-200">Erasmus+</strong> — Lodz University of Technology: İngilizce dersler, uluslararası iş birliği.</p>
+      <p><strong class="text-rose-200">Staj kabulü</strong> — South-West University &quot;Neofit Rilski&quot;, Bulgaristan (Erasmus+ profilinde kayıtlı).</p>
+      <p><strong class="text-rose-200">TEKNOFEST / İHA</strong> — Ulusal başvuru sürecinde görev planı, teknik raporlama ve teslim koordinasyonu.</p>
+      <p><strong class="text-rose-200">TEKNOFEST / İnsansız Sualtı</strong> — Entegrasyon takibi, dokümantasyon disiplini ve kilometre taşı bazlı ekip yürütümü.</p>
+      <p>
+        <strong class="text-rose-200">Google Antigravity</strong> — L10n kaynaklı DOM bozulmasını tespit edip
+        <strong class="text-rose-100">Issue #497054184</strong> ile Google mühendislerine raporladım; yeniden üretilebilir adımlarla
+        desteklendi.
+      </p>
+    </div>
+  </dialog>
+
+  <dialog id="modal-proj" class="pro-modal rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-lg w-[min(100%,28rem)] max-h-[min(92vh,44rem)] shadow-2xl">
+    <div class="sticky top-0 flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95 backdrop-blur">
+      <h2 class="font-display text-lg font-semibold text-white">Projelerim</h2>
+      <form method="dialog"><button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button></form>
+    </div>
+    <div class="overflow-y-auto px-4 py-3 text-sm text-zinc-300 space-y-3 max-h-[calc(92vh-4rem)]">
+      <div class="flex flex-wrap gap-2" data-anim="1">
+        <span class="pro-pill">Ürün geliştirme</span>
+        <span class="pro-pill">ML & veri</span>
+        <span class="pro-pill">Mühendislik disiplini</span>
+      </div>
+      <article class="pro-card" data-anim="2">
+        <h3 class="pro-card__title">ReK AI</h3>
+        <p class="pro-card__text">
+          Tarayıcı içinde çalışan yerel asistan mimarisiyle gizlilik ve düşük maliyet hedefini koruyorum; modüler akış ve net durum
+          yönetimi sayesinde bakım kolaylığı yüksek bir ürün omurgası sağlanıyor.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="3">
+        <h3 class="pro-card__title">Kişisel portföy</h3>
+        <p class="pro-card__text">
+          Mobil öncelikli arayüz, erişilebilir modal akışları ve statik yayın mimarisiyle teknik içerik yoğunluğunu sade bir kullanıcı
+          deneyimi içinde sunan uçtan uca portföy ürünü geliştirildi.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="4">
+        <h3 class="pro-card__title">Mayın tarlası tarzı mantık oyunu</h3>
+        <p class="pro-card__text">
+          Deterministik durum geçişleri, edge-case odaklı kontrol yapısı ve event-driven DOM güncellemeleriyle oyun döngüsünde tutarlı
+          davranış ve hata dayanımı hedeflendi.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="5">
+        <h3 class="pro-card__title">Kotlin / Android</h3>
+        <p class="pro-card__text">
+          UI-Domain-Data katman ayrımı ve lifecycle farkındalığı yüksek ekran akışı ile teknik borcu düşüren, sürdürülebilir Android
+          geliştirme pratiği devam ediyor.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="6">
+        <h3 class="pro-card__title">Mühendislik projesi · oyun ve fizyoterapi</h3>
+        <p class="pro-card__text">
+          Sensör verisini oyun geri bildirimiyle eşzamanlı işleyen bir etkileşim modeli üzerinde; donanım-yazılım senkronu, filtreleme
+          ve takım entegrasyon sözleşmeleriyle ilerleniyor.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="7">
+        <h3 class="pro-card__title">Zeytin kalite sınıflandırma sistemi</h3>
+        <p class="pro-card__text">
+          Saha koşullarında üretilen 2694 görüntüden oluşan özgün veri kümesi üzerinde EfficientNet-B0 tabanlı modelle bağımsız testte
+          %84.95 doğruluk elde edildi; Yeşil ve Siyah sınıflarda %90+ başarı ile üretim hattına uygun kalite kontrol yaklaşımı ortaya
+          kondu.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="8">
+        <h3 class="pro-card__title">Akademik yazım ve teknik raporlama</h3>
+        <p class="pro-card__text">
+          Problem, yöntem, metrik ve sonuç zincirini tekrarlanabilir biçimde raporlayan dokümantasyon yaklaşımıyla proje çıktıları
+          akademik değerlendirme seviyesine taşındı. Makale dosyası tam portföyde indirilebilir.
+        </p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog id="modal-int" class="pro-modal rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-lg w-[min(100%,28rem)] max-h-[min(92vh,44rem)] shadow-2xl">
+    <div class="sticky top-0 flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95 backdrop-blur">
+      <h2 class="font-display text-lg font-semibold text-white">İlgi alanlarım</h2>
+      <form method="dialog"><button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button></form>
+    </div>
+    <div class="overflow-y-auto px-4 py-3 text-sm text-zinc-300 max-h-[calc(92vh-4rem)] space-y-3">
+      <article class="pro-card" data-anim="2">
+        <h3 class="pro-card__title">Satranç</h3>
+        <p class="pro-card__text">
+          Çok adımlı düşünme, varyant analizi ve baskı altında karar kalitesi üzerine düzenli zihinsel antrenman olarak görüyorum.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="3">
+        <h3 class="pro-card__title">Yazılım geliştirme</h3>
+        <p class="pro-card__text">
+          Yeni araç ve yaklaşımları küçük prototiplerle test ederek öğrenirim; pratik çıktıya dönüşmeyen bilgiyi kalıcı kabul etmem.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="4">
+        <h3 class="pro-card__title">Makine öğrenmesi</h3>
+        <p class="pro-card__text">
+          Veri kalitesi, model performansı ve gerçek kullanım kısıtları arasındaki dengeyi incelemeyi; araştırma notlarını üretime
+          dönük şekilde yapılandırmayı önemsiyorum.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="5">
+        <h3 class="pro-card__title">Bilgisayar donanımı</h3>
+        <p class="pro-card__text">
+          Donanım-temelli performans farklarını anlamak; yazılım optimizasyon kararlarında kaynak maliyetini daha doğru okumamı sağlar.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="6">
+        <h3 class="pro-card__title">Tenis</h3>
+        <p class="pro-card__text">
+          Tempo yönetimi, sabır ve tekrar disiplini gibi alışkanlıklarla uzun soluklu teknik hedeflerde sürdürülebilir odak kuruyorum.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="7">
+        <h3 class="pro-card__title">Yeni dil öğrenimi</h3>
+        <p class="pro-card__text">
+          İngilizceyi aktif kullanmaya devam ederken, yeni dillerle farklı kültürlerde teknik iletişim kurabilme kapasitemi büyütüyorum.
+        </p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog id="modal-about" class="pro-modal rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-lg w-[min(100%,28rem)] max-h-[min(92vh,44rem)] shadow-2xl">
+    <div class="sticky top-0 flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95 backdrop-blur">
+      <h2 class="font-display text-lg font-semibold text-white">Hakkımda</h2>
+      <form method="dialog"><button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button></form>
+    </div>
+    <div class="overflow-y-auto px-4 py-3 text-sm text-zinc-300 space-y-3 max-h-[calc(92vh-4rem)]">
+      <div class="flex flex-wrap gap-2" data-anim="1">
+        <span class="pro-pill">Bilgisayar mühendisliği</span>
+        <span class="pro-pill">Erasmus+ deneyimi</span>
+        <span class="pro-pill">Staj kabulü</span>
+        <span class="pro-pill">Google Antigravity · #497054184</span>
+      </div>
+      <article class="pro-card" data-anim="2">
+        <h3 class="pro-card__title">Mühendislik yaklaşımım</h3>
+        <p class="pro-card__text">
+          Kodu yalnızca çalışır hale getirmeyi değil, sürdürülebilir, okunabilir ve ekip içinde devredilebilir hale getirmeyi temel
+          kalite kriteri olarak görüyorum.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="3">
+        <h3 class="pro-card__title">Akademik + pratik denge</h3>
+        <p class="pro-card__text">
+          KSÜ’deki çekirdek mühendislik derslerini proje çıktılarıyla birleştiriyor; Erasmus ve yarışma süreçlerinde çok kültürlü
+          takım koordinasyonu ve raporlama becerilerimi geliştiriyorum.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="4">
+        <h3 class="pro-card__title">Uluslararası deneyim</h3>
+        <p class="pro-card__text">
+          Lodz University of Technology’deki Erasmus dönemi ve Bulgaristan’daki resmî staj kabulü, farklı çalışma kültürleri içinde
+          teknik üretim yapabilme adaptasyonumu güçlendirdi.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="5">
+        <h3 class="pro-card__title">Yarışma ve ekip disiplini</h3>
+        <p class="pro-card__text">
+          TEKNOFEST’in Uluslararası İHA ve İnsansız Sualtı başvurularında görev kırılımı, dokümantasyon ve teslim koordinasyonunu
+          ölçülebilir takım çıktılarıyla yönetme fırsatı buldum.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="6">
+        <h3 class="pro-card__title">Ürün geri bildirimi</h3>
+        <p class="pro-card__text">
+          Google Antigravity’de L10n kaynaklı bir DOM sorununu tespit edip Issue #497054184 üzerinden Google mühendislerine
+          ilettim; teknik raporlama ve repro disiplinini ürün dışı platformlarda da sürdürüyorum.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="7">
+        <h3 class="pro-card__title">Kariyer odağı</h3>
+        <p class="pro-card__text">
+          Üretim odaklı ekiplerde staj ve junior yazılım rolleri için; hızlı öğrenme, sorumluluk alma ve ölçülebilir katkı üretme
+          hedefiyle ilerliyorum.
+        </p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog id="modal-edu" class="pro-modal rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-lg w-[min(100%,28rem)] max-h-[min(92vh,44rem)] shadow-2xl">
+    <div class="sticky top-0 flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95 backdrop-blur">
+      <h2 class="font-display text-lg font-semibold text-white">Eğitim</h2>
+      <form method="dialog"><button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button></form>
+    </div>
+    <div class="overflow-y-auto px-4 py-3 text-sm text-zinc-300 space-y-3 max-h-[calc(92vh-4rem)]">
+      <article class="pro-card" data-anim="1">
+        <h3 class="pro-card__title">KSÜ · Bilgisayar Mühendisliği</h3>
+        <p class="pro-card__text">
+          Algoritmalar, yazılım mühendisliği, veritabanı, ağlar ve yapay zekâ ekseninde güçlü bir çekirdek kuruyor; laboratuvar ve
+          proje teslimleriyle teoriyi pratiğe dönüştürüyorum.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="2">
+        <h3 class="pro-card__title">İngilizce hazırlık</h3>
+        <p class="pro-card__text">
+          Teknik dokümantasyon okuma, sunum ve yazılı iletişimde aktif kullanılabilen B2 seviye temeli sistematik bir programla
+          tamamlandı.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="3">
+        <h3 class="pro-card__title">Erasmus+ · Lodz University of Technology</h3>
+        <p class="pro-card__text">
+          Uluslararası akademik ortamda İngilizce dersler ve takım projeleriyle farklı çalışma kültürlerine uyum ve teknik iletişim
+          kapasitem güçlendirildi.
+        </p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog id="modal-skills" class="pro-modal rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-lg w-[min(100%,28rem)] max-h-[min(92vh,44rem)] shadow-2xl">
+    <div class="sticky top-0 flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95 backdrop-blur">
+      <h2 class="font-display text-lg font-semibold text-white">Yetenekler</h2>
+      <form method="dialog"><button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button></form>
+    </div>
+    <div class="overflow-y-auto px-4 py-3 text-sm text-zinc-300 space-y-3 max-h-[calc(92vh-4rem)]">
+      <article class="pro-card" data-anim="1">
+        <h2 class="pro-card__title">Modern yazılım geliştirme</h2>
+        <p class="pro-card__text">
+          React, Next.js ve modüler JavaScript/TypeScript ile sürdürülebilir mimariler kurar; SSR/SSG stratejileri, Zustand/Context API
+          durum yönetimi ve kod review disiplini üzerinden yüksek kaliteli teslimat üretirim.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="2">
+        <h3 class="pro-card__title">ML ve veri mühendisliği pratiği</h3>
+        <p class="pro-card__text">
+          Python, SQL, TensorFlow ve PyTorch ile veri hazırlama, modelleme, metrik analizi ve deney tekrarlanabilirliğini uçtan uca
+          yönetirim.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="3">
+        <h3 class="pro-card__title">Algoritma ve sistem temelleri</h3>
+        <p class="pro-card__text">
+          Veri yapıları, karmaşıklık analizi ve mimari temel prensipleri; performans, bakım maliyeti ve ölçeklenebilirlik kararlarının
+          teknik omurgası olarak konumlandırırım.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="4">
+        <h3 class="pro-card__title">Ekip içi çalışma ve iletişim</h3>
+        <p class="pro-card__text">
+          Teknik konuları iş hedefiyle ilişkilendirip anlaşılır şekilde dokümante eder; geri bildirim döngüsünü hızlandıran açık iletişim
+          ve net sorumluluk paylaşımını öncelerim.
+        </p>
+      </article>
+      <article class="pro-card" data-anim="5">
+        <h3 class="pro-card__title">Mühendislik iş disiplini</h3>
+        <p class="pro-card__text">
+          Problem tanımı, görev kırılımı, dokümantasyon ve teslim sonrası takip adımlarını birlikte ele alır; teknik kaliteyi zaman
+          baskısı altında da korumaya odaklanırım.
+        </p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog id="modal-cv" class="pro-modal rounded-2xl border border-rose-900/40 bg-zinc-900 text-zinc-100 max-w-md w-[min(100%,22rem)] shadow-2xl" aria-labelledby="modal-cv-title">
+    <div class="flex items-center justify-between border-b border-zinc-800 px-4 py-3 bg-zinc-900/95">
+      <h2 id="modal-cv-title" class="font-display text-lg font-semibold text-white">CV indir</h2>
+      <form method="dialog">
+        <button type="submit" class="rounded-lg px-2 py-1 text-zinc-400 hover:bg-zinc-800 hover:text-white text-xl leading-none" aria-label="Kapat">×</button>
+      </form>
+    </div>
+    <div class="px-4 py-4 space-y-3">
+      <p class="text-sm text-zinc-400">İndirmeden önce dil seçin.</p>
+      <div class="flex flex-col gap-2">
+        <a
+          href="assets/cv/cv-tr.pdf"
+          download="Resul_Kilinc_CV_TR.pdf"
+          class="inline-flex justify-center rounded-xl bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-rose-500 transition"
+          >Türkçe PDF</a
+        >
+        <a
+          href="assets/cv/cv-en.pdf"
+          download="Resul_Kilinc_CV_EN.pdf"
+          class="inline-flex justify-center rounded-xl border border-zinc-600 bg-zinc-800/80 px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-rose-500/40 transition"
+          >English PDF</a
+        >
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal modal--gmail" id="contact-modal" aria-labelledby="contact-modal-title">
+    <div class="gmail-compose">
+      <div class="gmail-compose__chrome">
+        <div class="gmail-compose__toolbar" aria-hidden="true">
+          <span class="gmail-compose__dot gmail-compose__dot--min"></span>
+          <span class="gmail-compose__dot gmail-compose__dot--max"></span>
+          <span class="gmail-compose__dot gmail-compose__dot--close"></span>
+        </div>
+        <div class="gmail-compose__head">
+          <div class="gmail-compose__head-text">
+            <h2 id="contact-modal-title" class="gmail-compose__title">E-posta ile iletişim</h2>
+            <p class="gmail-compose__kicker">Güvenli form · doğrudan gelen kutum</p>
+          </div>
+          <form method="dialog" class="gmail-compose__close-form">
+            <button type="submit" class="modal__close gmail-compose__x" aria-label="Kapat">&times;</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal__body gmail-compose__body">
+        <p class="gmail-compose__notice">
+          Bu arayüz üzerinden ileteceğiniz mesaj, şifreli iletim kullanan bir form hizmeti aracılığıyla doğrudan
+          <strong>kilincresul722@gmail.com</strong> adresimdeki gelen kutusuna yönlendirilir. Yanıt sürecini
+          kolaylaştırmak ve kayıtları net tutmak adına adınızı, e-postanızı, konuyu ve mesaj gövdesini eksiksiz ve doğru
+          biçimde doldurmanızı rica ederim.
+        </p>
+        <div class="gmail-compose__card">
+        <form id="contact-modal-form" class="form-grid form-grid--gmail" novalidate>
+          <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="gmail-field gmail-field--to">
+            <span class="gmail-field__label">Kime</span>
+            <input type="email" readonly value="kilincresul722@gmail.com" class="gmail-field__input gmail-field__input--readonly" />
+          </div>
+          <div class="form-row">
+            <label for="contact-modal-name">Adınız</label>
+            <input id="contact-modal-name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="form-row">
+            <label for="contact-modal-email">E-postanız</label>
+            <input id="contact-modal-email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="form-row">
+            <label for="contact-modal-subject">Konu</label>
+            <input id="contact-modal-subject" name="subject" type="text" required />
+          </div>
+          <div class="form-row form-row--message">
+            <label for="contact-modal-message">Mesaj</label>
+            <textarea id="contact-modal-message" name="message" required rows="8" placeholder="Mesajınızı yazın…"></textarea>
+          </div>
+          <p id="contact-modal-status" class="form-status" role="status"></p>
+          <div class="gmail-compose__actions">
+            <button type="submit" class="btn btn--send" id="contact-modal-submit">Gönder</button>
+          </div>
+        </form>
+        </div>
+        <div class="wa-quick gmail-compose__wa">
+          <span class="wa-quick__label">WhatsApp</span>
+          <a href="https://wa.me/905312469910" rel="noopener noreferrer" target="_blank">Sohbeti aç</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="res-ai-modal" class="modal modal--res-ai rek-index-ai" aria-labelledby="rek-ai-index-title">
+    <div class="rek-platform rek-platform--index rek-platform--controls-open">
+      <header class="rek-platform__header">
+        <div class="rek-platform__header-top">
+          <div class="rek-platform__brand">
+            <div class="rek-platform__logo rek-platform__logo--index rek-platform__logo--robot" aria-hidden="true">
+              <svg class="rek-platform__robot-svg" width="40" height="40" viewBox="0 0 48 48" focusable="false">
+                <use href="#rek-ai-robot-hud" />
+              </svg>
+            </div>
+            <div class="rek-platform__titles">
+              <h2 id="rek-ai-index-title" class="rek-platform__title">ReK AI Platform</h2>
+              <span class="rek-platform__moon" aria-hidden="true" title="Yerel çalışma">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <nav class="rek-platform__tabs" data-res-ai-tabs aria-label="ReK AI bölümleri">
+            <button type="button" class="rek-platform__tab is-active" data-res-ai-tab-btn="chat" aria-pressed="true">Chat</button>
+            <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="diagnostics" aria-pressed="false">Diagnostics</button>
+            <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="workflows" aria-pressed="false">Workflows</button>
+            <button type="button" class="rek-platform__tab" data-res-ai-tab-btn="knowledge" aria-pressed="false">Knowledge Base</button>
+          </nav>
+          <div class="rek-platform__header-end">
+            <div class="rek-platform__header-badge">
+              <p class="rek-platform__tagline">Secure · Local · No API Costs</p>
+              <form method="dialog" class="rek-platform__close-form">
+                <button type="submit" class="rek-platform__close" aria-label="Kapat">&times;</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="rek-platform__workspace">
+        <aside class="rek-platform__sidebar glass-panel" id="rek-ai-sidebar-panel">
+          <section class="rek-sidebar__section">
+            <h3 class="rek-sidebar__heading">Temel kontroller</h3>
+            <div class="rek-sidebar__field">
+              <label class="rek-sidebar__label" for="rek-ai-index-mode">Yanıt modu</label>
+              <select id="rek-ai-index-mode" class="rek-sidebar__select" data-res-ai-mode>
+                <option value="balanced">Balanced</option>
+                <option value="source_first">Source-first</option>
+              </select>
+            </div>
+            <div class="rek-sidebar__field">
+              <label class="rek-sidebar__label" for="rek-ai-index-depth">Depth</label>
+              <select id="rek-ai-index-depth" class="rek-sidebar__select" data-res-ai-depth>
+                <option value="3">3</option>
+                <option value="5" selected>5</option>
+                <option value="7">7</option>
+              </select>
+            </div>
+            <div class="rek-sidebar__field">
+              <label class="rek-sidebar__label" for="rek-ai-guard-preset">Guard preset</label>
+              <select id="rek-ai-guard-preset" class="rek-sidebar__select" data-res-ai-guard-preset>
+                <option value="strict">Strict</option>
+                <option value="normal" selected>Normal</option>
+                <option value="relaxed">Relaxed</option>
+                <option value="custom">Custom</option>
+              </select>
+            </div>
+            <div class="rek-sidebar__field rek-sidebar__field--row">
+              <label class="rek-sidebar__label" for="rek-ai-guard-threshold">Guard eşiği</label>
+              <input id="rek-ai-guard-threshold" type="number" min="0.5" max="9.5" step="0.1" value="3.2" class="rek-sidebar__number" data-res-ai-guard-threshold />
+            </div>
+            <label class="rek-sidebar__toggle">
+              <input type="checkbox" data-res-ai-audit-toggle />
+              <span>Audit trail</span>
+            </label>
+          </section>
+          <section class="rek-sidebar__section">
+            <h3 class="rek-sidebar__heading rek-sidebar__heading--hud">Guard eşiği (slider)</h3>
+            <input type="range" class="rek-sidebar__range rek-sidebar__range--hud" min="0.5" max="9.5" step="0.1" value="3.2" data-res-ai-guard-range aria-label="Guard eşiği kaydırıcı" />
+          </section>
+        </aside>
+
+        <main class="rek-platform__stage">
+          <div class="rek-platform__panel is-active" data-res-ai-tab-panel="chat">
+            <div class="rek-chat-stage rek-chat-stage--focus">
+              <button type="button" class="rek-controls-toggle" data-res-ai-sidebar-toggle aria-expanded="true" aria-controls="rek-ai-sidebar-panel" title="Temel kontrolleri göster / gizle">
+                Kontroller
+              </button>
+              <div class="rek-chat-layout">
+                <div class="rek-chat-thread">
+                  <div class="rek-chat-canvas">
+                    <div class="rek-chat-canvas__glow" aria-hidden="true"></div>
+                    <div class="rek-chat-canvas__circuits rek-chat-canvas__circuits--tr" aria-hidden="true"></div>
+                    <div class="rek-chat-canvas__circuits rek-chat-canvas__circuits--bl" aria-hidden="true"></div>
+                    <div class="rek-chat-canvas__circuits rek-chat-canvas__circuits--center" aria-hidden="true"></div>
+                    <div class="res-ai-chat rek-chat-stage__log">
+                      <div class="res-ai-chat__log" data-res-ai-chat-log></div>
+                    </div>
+                  </div>
+                  <div class="rek-chat-suggestions">
+                    <p class="rek-chat-suggestions__label">Devam et</p>
+                    <div class="rek-chat-quick-chips" data-res-ai-chips-inline aria-label="Önerilen sorular">
+                      <button
+                        type="button"
+                        class="res-ai-chip res-ai-chip--scroll res-ai-chip--mockup res-ai-chip--hud"
+                        title="Projeleri özetle; teknik yığın ve çıktıları vurgula."
+                        data-chip-query="Projeleri özetle; teknik yığın ve çıktıları vurgula."
+                      >
+                        <span class="res-ai-chip__bracket">[</span><span class="res-ai-chip__hud-text">SUGGESTION: Projeleri özetle</span><span class="res-ai-chip__bracket">]</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="res-ai-chip res-ai-chip--scroll res-ai-chip--mockup res-ai-chip--hud"
+                        title="Zeytin hastalığı tespit projesinde model ve test metrikleri nelerdir?"
+                        data-chip-query="Zeytin hastalığı tespit projesinde model ve test metrikleri nelerdir?"
+                      >
+                        <span class="res-ai-chip__bracket">[</span><span class="res-ai-chip__hud-text">SUGGESTION: Zeytin Arş. çalışması</span><span class="res-ai-chip__bracket">]</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="res-ai-chip res-ai-chip--scroll res-ai-chip--mockup res-ai-chip--hud"
+                        title="İletişim ve iş birliği için nasıl ulaşılır?"
+                        data-chip-query="İletişim ve iş birliği için nasıl ulaşılır?"
+                      >
+                        <span class="res-ai-chip__bracket">[</span><span class="res-ai-chip__hud-text">SUGGESTION: İletişime geç</span><span class="res-ai-chip__bracket">]</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="rek-composer">
+                    <form class="rek-composer__form" data-res-ai-form>
+                      <label class="sr-only" for="rek-ai-index-input">Mesaj</label>
+                      <input id="rek-ai-index-input" data-res-ai-input type="text" class="rek-composer__input" placeholder="ReK AI'a soru" autocomplete="off" />
+                      <button type="submit" class="rek-composer__send">Gönder →</button>
+                    </form>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="rek-platform__panel" data-res-ai-tab-panel="diagnostics">
+            <p class="res-ai-block-title">Diagnostics</p>
+            <div data-res-ai-diagnostics></div>
+            <div class="res-ai-diagnostics__controls">
+              <label for="rek-ai-diag-window">Pencere</label>
+              <select id="rek-ai-diag-window" class="res-ai-diagnostics__window" data-res-ai-diag-window>
+                <option value="8">8</option>
+                <option value="16">16</option>
+                <option value="24">24</option>
+              </select>
+              <button type="button" class="res-ai-diagnostics__export" data-res-ai-export-json>JSON</button>
+              <button type="button" class="res-ai-diagnostics__export" data-res-ai-export-csv>CSV</button>
+            </div>
+          </div>
+
+          <div class="rek-platform__panel" data-res-ai-tab-panel="workflows">
+            <p class="res-ai-block-title">İş hattı</p>
+            <p class="rek-platform__panel-hint">Yerel eşleştirme adımları (simüle).</p>
+            <div class="pipeline" data-res-ai-pipeline>
+              <span class="pipeline__step" data-step="idle">Beklemede</span>
+              <span class="pipeline__step" data-step="retrieve">Getir</span>
+              <span class="pipeline__step" data-step="rank">Sırala</span>
+              <span class="pipeline__step" data-step="compose">Oluştur</span>
+              <span class="pipeline__step" data-step="stream">Akıt</span>
+              <span class="pipeline__step" data-step="done">Bitti</span>
+            </div>
+            <p class="res-ai-block-title mt-3">Session compare</p>
+            <div class="res-ai-session-compare" data-res-ai-session-compare></div>
+          </div>
+
+          <div class="rek-platform__panel" data-res-ai-tab-panel="knowledge">
+            <p class="res-ai-block-title">Hızlı sorgular</p>
+            <div class="res-ai-chips" data-res-ai-chips>
+              <button type="button" class="res-ai-chip" data-chip-query="Zeytin projesinin test sonucu ne?">Zeytin sonucu</button>
+              <button type="button" class="res-ai-chip" data-chip-query="Resul hangi alanlarda uzman?">Uzmanlık</button>
+              <button type="button" class="res-ai-chip" data-chip-query="Show evidence about software architecture workflow.">Evidence</button>
+            </div>
+            <p class="res-ai-block-title mt-3">Audit trail</p>
+            <div class="res-ai-audit" data-res-ai-audit></div>
+          </div>
+        </main>
+      </div>
+
+      <footer class="rek-platform__footer">
+        <button type="button" class="rek-clear-history" data-res-ai-clear>
+          <svg class="rek-clear-history__spark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              fill="currentColor"
+              d="M12 2l1.2 4.2L17 5l-3 3.2L16 12l-4-1.5L8 12l2-3.8L7 5l3.8 1.2L12 2zm-6 14l.9 2.5 2.6.7-2.1 1.8.3 2.7-2.5-1.1-2.5 1.1.3-2.7-2.1-1.8 2.6-.7L6 16zm13.5 1l1.1 2.4 2.6.4-1.9 1.8.5 2.6-2.4-1.2-2.4 1.2.5-2.6-1.9-1.8 2.6-.4 1.1-2.4z"
+            />
+          </svg>
+          Geçmişi temizle
+        </button>
+      </footer>
+    </div>
+  </dialog>
+
+  <div class="rek-ai-float" id="rek-ai-float-launcher" aria-live="polite">
+    <div class="rek-ai-float__tooltip" role="tooltip" hidden>Size nasıl yardımcı olabilirim?</div>
+    <button type="button" class="rek-ai-float__btn" data-open-res-ai aria-label="ReK AI asistanını aç" title="ReK AI">
+      <span class="rek-ai-float__glow" aria-hidden="true"></span>
+      <svg class="rek-ai-float__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <linearGradient id="rekAiFloatIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="currentColor" />
+            <stop offset="100%" stop-color="currentColor" stop-opacity="0.75" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#rekAiFloatIconGrad)"
+          d="M12 2.2 13.4 7.1h5.2l-4.2 3 1.6 5.1L12 14.8 8 15.2l1.6-5.1-4.2-3h5.2L12 2.2z"
+        />
+        <path
+          fill="currentColor"
+          opacity="0.82"
+          d="M18.6 7.9l.35 1.2 1.2.2-.9.75.32 1.15-1.07-.58-1.07.58.32-1.15-.9-.75 1.2-.2.35-1.2z"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    (function () {
+      var y = document.getElementById("y");
+      if (y) y.textContent = String(new Date().getFullYear());
+      document.querySelectorAll("[data-modal-open]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var id = btn.getAttribute("data-modal-open");
+          var d = id ? document.getElementById(id) : null;
+          if (d && typeof d.showModal === "function") d.showModal();
+        });
+      });
+      document.querySelectorAll("dialog").forEach(function (dialog) {
+        dialog.addEventListener("click", function (e) {
+          if (e.target === dialog) dialog.close();
+        });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key !== "Escape") return;
+        document.querySelectorAll("dialog[open]").forEach(function (d) {
+          d.close();
+        });
+      });
+
+      var sfxCtx = null;
+      function getSfxCtx() {
+        if (sfxCtx) return sfxCtx;
+        var Ctx = window.AudioContext || window.webkitAudioContext;
+        if (!Ctx) return null;
+        try {
+          sfxCtx = new Ctx();
+          return sfxCtx;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function playPortfolioEnterSfx() {
+        var ctx = getSfxCtx();
+        if (!ctx) return;
+        if (ctx.state === "suspended") ctx.resume().catch(function () {});
+        var now = ctx.currentTime;
+        var master = ctx.createGain();
+        master.gain.setValueAtTime(0.0001, now);
+        master.gain.exponentialRampToValueAtTime(0.22, now + 0.05);
+        master.gain.exponentialRampToValueAtTime(0.0001, now + 0.96);
+        master.connect(ctx.destination);
+
+        // Giriş: rüzgar yükselişi (upward whoosh)
+        var noiseBuffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.55), ctx.sampleRate);
+        var noiseData = noiseBuffer.getChannelData(0);
+        for (var i = 0; i < noiseData.length; i++) noiseData[i] = (Math.random() * 2 - 1) * 0.95;
+        var noiseSrc = ctx.createBufferSource();
+        noiseSrc.buffer = noiseBuffer;
+        var hp = ctx.createBiquadFilter();
+        hp.type = "highpass";
+        hp.frequency.setValueAtTime(180, now);
+        hp.frequency.exponentialRampToValueAtTime(860, now + 0.52);
+        var bp = ctx.createBiquadFilter();
+        bp.type = "bandpass";
+        bp.frequency.setValueAtTime(300, now);
+        bp.frequency.exponentialRampToValueAtTime(1640, now + 0.54);
+        bp.Q.setValueAtTime(0.65, now);
+        var noiseGain = ctx.createGain();
+        noiseGain.gain.setValueAtTime(0.0001, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.34, now + 0.08);
+        noiseGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.62);
+        noiseSrc.connect(hp);
+        hp.connect(bp);
+        bp.connect(noiseGain);
+        noiseGain.connect(master);
+
+        noiseSrc.start(now);
+        noiseSrc.stop(now + 0.66);
+      }
+
+      document.querySelectorAll("[data-portfolio-enter-sfx]").forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          if (e.defaultPrevented) return;
+          if (typeof e.button === "number" && e.button !== 0) return;
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          var href = link.getAttribute("href");
+          if (!href) return;
+          e.preventDefault();
+          playPortfolioEnterSfx();
+          window.setTimeout(function () {
+            window.location.href = href;
+          }, 320);
+        });
+      });
+    })();
+  </script>
+  <script src="js/contact-config.js"></script>
+  <script src="js/contact-modal.js"></script>
+  <script src="js/rek-ai-float-launcher.js?v=20260328a" defer></script>
+  <script type="module" src="js/res-ai/app.js?v=20260329l"></script>
+</body>
+</html>
